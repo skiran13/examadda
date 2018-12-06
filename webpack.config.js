@@ -11,17 +11,24 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     module: {
-        loaders: [
-            {
+        rules: [{
+            test: /\.css$/,
+            use: [ 'style-loader', 'css-loader' ]
+          },{
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react', 'es2015', 'stage-3']
+                    presets: ['react', 'es2015', 'stage-3'],
+                    //plugins: [ 'react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy', 'react-css-modules']
                 }
-            }
+            },
+           
+            { test: /\.(png|woff|woff2|otf|ttf|svg|eot|jpg)$/, loader: 'url-loader?limit=100000' }
+
         ]
     },
+    
     plugins: [new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
