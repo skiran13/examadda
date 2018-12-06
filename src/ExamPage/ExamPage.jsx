@@ -48,7 +48,7 @@ class ExamPage extends React.Component {
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="http://localhost:8080/land">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">xams</a></li>
+    <li class="breadcrumb-item"><a href="#">Exams</a></li>
     <li class="breadcrumb-item active" aria-current="page">SBI PO</li>
     </ol></nav>
 
