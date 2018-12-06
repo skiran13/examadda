@@ -46,21 +46,23 @@ class LandingPage extends React.Component {
     <section className="features-icons bg-light text-center">
       <div className="container">
         <div className="row">
+        
           <div className="col-lg-4">
           <div className="card">
   <img className="card-img-top" src={require("../img/sbi.jpg")} alt="Card image cap"/>
   <div classNames="card-body">
-    <h5 className="card-title">SBI PO</h5>
-    <p className="card-text">Study Materials, Mock Tests, Live tests and much more..</p>
+  <Link to='/exam' style={{'color':'black'}}><h5 className="card-title"> SBI PO</h5>
+    <p className="card-text">Study Materials, Mock Tests, Live tests and much more..</p><br></br></Link>
   </div>
   </div>
 </div>
+
           <div className="col-lg-4">
           <div className="card">
   <img className="card-img-top" src={require("../img/hdfc.jpg")} alt="Card image cap"/>
   <div classNames="card-body">
-    <h5 className="card-title">HDFC PO</h5>
-    <p className="card-text">Study Materials, Mock Tests, Live tests and much more..</p>
+  <Link to='/exam' style={{'color':'black'}}><h5 className="card-title">HDFC PO</h5>
+    <p className="card-text">Study Materials, Mock Tests, Live tests and much more..</p><br></br></Link>
   </div>
   </div>
     </div>
@@ -68,8 +70,8 @@ class LandingPage extends React.Component {
           <div className="card">
   <img className="card-img-top" src={require("../img/icici.jpg")} alt="Card image cap"/>
   <div classNames="card-body">
-    <h5 className="card-title">ICICI PO</h5>
-    <p className="card-text">Study Materials, Mock Tests, Live tests and much more..</p>
+  <Link to='/exam' style={{'color':'black'}}><h5 className="card-title">ICICI PO</h5>
+    <p className="card-text">Study Materials, Mock Tests, Live tests and much more..</p><br></br></Link>
   </div>
   </div>
           </div>
