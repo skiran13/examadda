@@ -35,18 +35,18 @@ class App extends React.Component {
 <div className="collapse navbar-collapse" id="navbarSupportedContent">
 <ul className="navbar-nav mr-auto">
   <li className="nav-item">
-    <a className="nav-link" href="#">Home</a>
+    <a className="nav-link" href="http://localhost:8080/land">Home</a>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Exams</a>
+    <a className="nav-link" href="http://localhost:8080/exam">Exams</a>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a className="nav-link" href="http://localhost:8080/test" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Tests
     </a>
   </li>
   <li className="nav-item">
-    <a className="nav-link " href="#">Forum</a>
+    <a className="nav-link " href="http://localhost:8080/forum">Forum</a>
   </li>
   
   <li className="nav-item">
