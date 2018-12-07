@@ -85,14 +85,20 @@ class App extends React.Component {
                     class='dropdown-menu hide'
                     aria-labelledby='navbarDropdown'
                   >
-                    <a class='dropdown-item' href='#'>
-                      Action
+                    <a class='dropdown-item' href='http://localhost:8080/exam'>
+                      SBI PO
                     </a>
-                    <a class='dropdown-item' href='#'>
-                      Another action
+                    <a
+                      class='dropdown-item'
+                      href='http://localhost:8080/FEDbank'
+                    >
+                      Federal Bank PO
                     </a>
-                    <a class='dropdown-item' href='#'>
-                      Something else here
+                    <a
+                      class='dropdown-item'
+                      href='http://localhost:8080/INDbank'
+                    >
+                      Indian Bank
                     </a>
                   </div>
                 </li>

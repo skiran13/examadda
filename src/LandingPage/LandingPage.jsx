@@ -88,6 +88,7 @@ class LandingPage extends React.Component {
               <div className='col-lg-4'>
                 <div className='card'>
                   <br />
+                  <br /> <br /> <br />
                   <img
                     className='card-img-top'
                     src={require('../img/fb.png')}
@@ -96,14 +97,17 @@ class LandingPage extends React.Component {
                   <div classNames='card-body'>
                     <Link to='/FEDbank' style={{ color: 'black' }}>
                       <h5 className='card-title'>
-                        <br /> <br />
+                        <br />
+                        <br /> <br /> <br />
+                        <br />
                         Federal Bank PO
                       </h5>
                       <p className='card-text'>
                         {' '}
                         Study Materials, Mock Tests, Live tests and much more..
+                        <br />
+                        <br />
                       </p>
-                      <br />
                     </Link>
                   </div>
                 </div>

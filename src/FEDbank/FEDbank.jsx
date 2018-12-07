@@ -14,7 +14,7 @@ class FEDbank extends React.Component {
     const { user, users } = this.props
     return (
       <div>
-         <nav aria-label='breadcrumb'>
+        <nav aria-label='breadcrumb'>
           <ol class='breadcrumb'>
             <li class='breadcrumb-item'>
               <a href='http://localhost:8080/land'>Home</a>
@@ -72,12 +72,11 @@ class FEDbank extends React.Component {
           </div>
         </header>
 
-       
-
         <div class='container'>
           <div class='row'>
             <div class='col-sm' id='TestCard'>
               <div className='card'>
+                <br />
                 <img
                   className='card-img-top'
                   src={require('../img/fb.png')}
