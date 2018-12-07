@@ -31,6 +31,7 @@ class App extends React.Component {
         <div>
           <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
             <a className='navbar-brand' href='http://localhost:8080/land'>
+            <i class="fas fa-book-reader mr-2"/>
               Exam-Adda
             </a>
             <button
@@ -54,7 +55,7 @@ class App extends React.Component {
                 style={{'width':'35vw'}}
               />
               <button
-                className='btn btn-outline-success my-2 my-sm-0'
+                className='btn btn-outline-light my-2 my-sm-0'
                 type='submit'
               >
                 Search
@@ -71,7 +72,7 @@ class App extends React.Component {
                     Home
                   </a>
                 </li>
-                <li className='nav-item dropdown show'>
+                <li className='nav-item dropdown'>
                   <a
                     className='nav-link dropdown-toggle'
                     href='http://localhost:8080/exam'
@@ -120,7 +121,7 @@ class App extends React.Component {
                     className='nav-link active'
                     href='http://localhost:8080/login'
                   >
-                    <blink>Login</blink>
+                    Login
                   </a>
                 </li>
                 <li className='nav-item'>
@@ -134,7 +135,7 @@ class App extends React.Component {
             </div>
           </nav>
         </div>
-        <div className='jumbotron'>
+        <div className='jumbotron' style={{'background-color':'#dcdee0'}}>
           <div className='container'>
             <div>
               {alert.message && (
