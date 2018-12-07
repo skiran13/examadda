@@ -26,22 +26,31 @@ class App extends React.Component {
         const { alert } = this.props;
         return (<div>
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 <a className="navbar-brand" href="#">Exam-Adda</a>
 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span className="navbar-toggler-icon"></span>
 </button>
+<form className="form-inline my-2 my-lg-0">
+  <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+  <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
 
 <div className="collapse navbar-collapse" id="navbarSupportedContent">
 <ul className="navbar-nav mr-auto">
   <li className="nav-item">
     <a className="nav-link" href="http://localhost:8080/land">Home</a>
   </li>
-  <li className="nav-item">
-    <a className="nav-link" href="http://localhost:8080/exam">Exams</a>
+  <li className="nav-item dropdown show">
+    <a className="nav-link dropdown-toggle" href="http://localhost:8080/exam" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Exams</a>
+    <div class="dropdown-menu hide" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>      
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="http://localhost:8080/test" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a className="nav-link" href="http://localhost:8080/test" >
       Tests
     </a>
   </li>
@@ -52,11 +61,10 @@ class App extends React.Component {
   <li className="nav-item">
     <a className="nav-link active" href="http://localhost:8080/login"><blink>Login</blink></a>
   </li>
+  <li className="nav-item">
+  <a  href="http://localhost:8080/register"><button type="button" class="btn btn-outline-light">Signup</button></a>
+  </li>
 </ul>
-<form className="form-inline my-2 my-lg-0">
-  <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-  <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
 </div>
 </nav>
         </div>
