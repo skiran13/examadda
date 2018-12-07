@@ -1,30 +1,32 @@
-import React from 'react';
-import { Router, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { history } from '../_helpers';
-import { alertActions } from '../_actions';
-import { PrivateRoute } from '../_components';
+import React from 'react'
+import { Router, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { history } from '../_helpers'
+import { alertActions } from '../_actions'
+import { PrivateRoute } from '../_components'
 import '../css/landing-page.css'
-import { HomePage } from '../HomePage';
-import { LoginPage } from '../LoginPage';
-import { LandingPage } from '../LandingPage';
-import { RegisterPage } from '../RegisterPage';
-import { ExamPage } from '../ExamPage';
+import { HomePage } from '../HomePage'
+import { LoginPage } from '../LoginPage'
+import { LandingPage } from '../LandingPage'
+import { RegisterPage } from '../RegisterPage'
+import { ExamPage } from '../ExamPage'
+import { FEDbank } from '../FEDbank'
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor (props) {
+    super(props)
 
-        const { dispatch } = this.props;
-        history.listen((location, action) => {
-            // clear alert on location change
-            dispatch(alertActions.clear());
-        });
-    }
+    const { dispatch } = this.props
+    history.listen((location, action) => {
+      // clear alert on location change
+      dispatch(alertActions.clear())
+    })
+  }
 
-    render() {
-        const { alert } = this.props;
-        return (<div>
+  render () {
+    const { alert } = this.props
+    return (
+      <div>
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 <a className="navbar-brand" href="#">Exam-Adda</a>
@@ -37,7 +39,7 @@ class App extends React.Component {
 </form>
 
 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-<ul className="navbar-nav mr-auto">
+<ul className="navbar-nav">
   <li className="nav-item">
     <a className="nav-link" href="http://localhost:8080/land">Home</a>
   </li>
@@ -82,22 +84,23 @@ class App extends React.Component {
                                 <Route path="/land" component={LandingPage} />
                                 <Route path="/exam" component={ExamPage} />
 
-                            </div>
-                        </Router>
-                    </div>
+                  <Route path='/FEDbank' component={FEDbank} />
                 </div>
+              </Router>
             </div>
-            </div>
-        );
-    }
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
-function mapStateToProps(state) {
-    const { alert } = state;
-    return {
-        alert
-    };
+function mapStateToProps (state) {
+  const { alert } = state
+  return {
+    alert
+  }
 }
 
-const connectedApp = connect(mapStateToProps)(App);
-export { connectedApp as App }; 
+const connectedApp = connect(mapStateToProps)(App)
+export { connectedApp as App }

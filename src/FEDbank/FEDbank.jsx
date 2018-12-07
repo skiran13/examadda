@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { userActions } from '../_actions'
 import '../css/ExamPage.css'
 
-class ExamPage extends React.Component {
+class FEDbank extends React.Component {
   componentDidMount () {
     this.props.dispatch(userActions.getAll())
   }
@@ -30,13 +30,13 @@ class ExamPage extends React.Component {
           <div className='container'>
             <div className='row'>
               <div className='col-xl-9 mx-auto'>
-                <h1 className='mb-5'>SBI PO 2018 Results</h1>
+                <h1 className='mb-5'>Federal Bank PO</h1>
                 <h5>
-                  SBI PO 2018 Exam is a wonderful opportunity for you to turn
-                  your dreams into reality! Get all information about online sbi
-                  po - syllabus, preparation guide, last date to apply, exam
-                  dates, admit card, latest exam pattern and results here. Kick
-                  start your preparation now!
+                  Federal Bank PO 2018 Exam is a wonderful opportunity for you
+                  to turn your dreams into reality! Get all information about
+                  Federal Bank PO Exam Date 2018, Salary, Syllabus, Preparation
+                  Guide, Admit Card, Latest Exam Pattern and Results here.
+                  Kickstart your preparation with Online Test Series now!
                 </h5>
               </div>
               <div className='col-md-10 col-lg-8 col-xl-7 mx-auto'>
@@ -68,7 +68,7 @@ class ExamPage extends React.Component {
               <a href='#'>Exams</a>
             </li>
             <li class='breadcrumb-item active' aria-current='page'>
-              SBI PO
+              Federal Bank PO
             </li>
           </ol>
         </nav>
@@ -79,15 +79,20 @@ class ExamPage extends React.Component {
               <div className='card'>
                 <img
                   className='card-img-top'
-                  src={require('../img/sbi.jpg')}
+                  src={require('../img/fb.png')}
                   alt='Card image cap'
                 />
                 <div className='card-body'>
-                  <h5 className='card-title'>SBI PO - Memory Based Paper</h5>
+                  <h5 className='card-title'>
+                    Federal Bank PO - Memory Based Paper
+                  </h5>
                   <p className='card-text'>
-                    <b>100</b> QUESTIONS<hr />
-                    <b>100</b> MARKS<hr />
-                    <b>60</b> MINUTES<hr />
+                    <b>150</b> QUESTIONS
+                    <hr />
+                    <b>150</b> MARKS
+                    <hr />
+                    <b>90</b> MINUTES
+                    <hr />
                   </p>
 
                   <a href='#' className='btn btn-primary btn btn-block'>
@@ -157,7 +162,7 @@ class ExamPage extends React.Component {
         </div>
         <container>
           <center>
-            <h1>SBI PO Prelims Exam Analysis</h1>
+            <h1>Federal Bank PO Prelims Exam Analysis</h1>
           </center>
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -169,8 +174,7 @@ class ExamPage extends React.Component {
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
           <center>
-            <h2>SBI PO 2018 Exam Pattern</h2>
-            <br />
+            <h2>Federal Bank PO 2018 Exam Pattern</h2>
           </center>
           <table class='table table-bordered'>
             <thead>
@@ -185,29 +189,49 @@ class ExamPage extends React.Component {
               <tr>
                 <th scope='row'>English Language</th>
                 <td>30</td>
-                <td>100 marks</td>
-                <td>20 mins</td>
+                <td>30</td>
+                <td>Composite Time of 90 mins</td>
               </tr>
               <tr>
                 <th scope='row'>Quantitative Aptitude</th>
-                <td>35</td>
+                <td>30</td>
+                <td>30</td>
                 <td />
-                <td>20 mins</td>
               </tr>
               <tr>
                 <th scope='row'>Reasoning Ability</th>
-                <td colspan='2'>35</td>
-                <td>20 mins</td>
+                <td>30</td>
+                <td>30</td>
+                <td />
+              </tr>
+              <tr>
+                <th scope='row'>General,Socio-Economic & Banking</th>
+                <td>25</td>
+                <td>25</td>
+                <td />
+              </tr>
+              <tr>
+                <th scope='row'>Computer Awareness</th>
+                <td>20</td>
+                <td>20</td>
+                <td />
+              </tr>
+              <tr>
+                <th scope='row'>Digital Banking</th>
+                <td>15</td>
+                <td>15</td>
+                <td />
               </tr>
               <tr>
                 <th scope='row'>TOTAL</th>
-                <td colspan='2'>100</td>
-                <td>1 hour</td>
+                <td>150</td>
+                <td>150</td>
+                <td />
               </tr>
             </tbody>
           </table>
           <center>
-            <h1>SBI PO 2018 Exam Dates & Schedule</h1>
+            <h1>Federal Bank PO 2018 Exam Dates & Schedule</h1>
           </center>
           <p>
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -226,7 +250,7 @@ class ExamPage extends React.Component {
             pariatur?"
           </p>
           <center>
-            <h1>SBI PO 2018 Vacancy list</h1>
+            <h1>Federal Bank PO 2018 Vacancy list</h1>
           </center>
           <p>
             "At vero eos et accusamus et iusto odio dignissimos ducimus qui
@@ -244,7 +268,7 @@ class ExamPage extends React.Component {
             consequatur aut perferendis doloribus asperiores repellat."
           </p>
           <center>
-            <h1>SBI PO 2018 Eligibility Criteria</h1>
+            <h1>Federal Bank PO 2018 Eligibility Criteria</h1>
           </center>
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -318,5 +342,5 @@ function mapStateToProps (state) {
   }
 }
 
-const connectedExamPage = connect(mapStateToProps)(ExamPage)
-export { connectedExamPage as ExamPage }
+const connectedFEDbank = connect(mapStateToProps)(FEDbank)
+export { connectedFEDbank as FEDbank }
