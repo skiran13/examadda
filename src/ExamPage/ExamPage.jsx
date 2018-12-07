@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { userActions } from '../_actions';
 import '../css/ExamPage.css'
 
@@ -16,10 +15,10 @@ class ExamPage extends React.Component {
         return (
             <div>
               <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://localhost:8080/land">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Exams</a></li>
-    <li class="breadcrumb-item active" aria-current="page">SBI PO</li>
+  <ol className="breadcrumb">
+    <li className="breadcrumb-item"><a href="http://localhost:8080/land">Home</a></li>
+    <li className="breadcrumb-item"><a href="#">Exams</a></li>
+    <li className="breadcrumb-item active" aria-current="page">SBI PO</li>
     </ol></nav>
 
                 <nav className="navbar navbar-light bg-light static-top">
@@ -54,9 +53,9 @@ class ExamPage extends React.Component {
     
     
 
-    <div class="container">
-  <div class="row">
-    <div class="col-sm"  id="TestCard">
+    <div className="container">
+  <div className="row">
+    <div className="col-sm"  id="TestCard">
     <div className="card">
   <img className="card-img-top" src={require("../img/sbi.jpg")} alt="Card image cap"/>
   <div className="card-body">
@@ -71,21 +70,21 @@ class ExamPage extends React.Component {
   </div>
 </div>
     </div>
-    <div class="col-sm">
+    <div className="col-sm">
       
     </div>
-    <div class="col-sm">
+    <div className="col-sm">
      
     </div>
   </div>
 </div>
    
     
-<div class="jumbotron jumbotron-fluid">
-<div class="container">
+<div className="jumbotron jumbotron-fluid">
+<div className="container">
 <h1><center id="Price">One Pass. All Exams. Unlimited Tests</center></h1>
-  <div class="row">
-    <div class="col-sm">
+  <div className="row">
+    <div className="col-sm">
     <div className="card">
            <div className="card-body">
            <h3 className="card-title text-center">YEARLY PRICE</h3>
@@ -97,7 +96,7 @@ class ExamPage extends React.Component {
            </div>
 
     </div>
-    <div class="col-sm">
+    <div className="col-sm">
     <div className="card">
            <div className="card-body">
            <h3 className="card-title text-center">4 MONTHS PRICE</h3>
@@ -108,7 +107,7 @@ class ExamPage extends React.Component {
            </div>
            </div>
     </div>
-    <div class="col-sm">
+    <div className="col-sm">
     <div className="card">
            <div className="card-body">
            <h3 className="card-title text-center">2 MONTHS PRICE</h3>
@@ -126,7 +125,7 @@ class ExamPage extends React.Component {
       <center><h1>SBI PO Prelims Exam Analysis</h1></center>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
       <center><h2>SBI PO 2018 Exam Pattern</h2></center>
-      <table class="table table-bordered">
+      <table className="table table-bordered">
   <thead>
     <tr>
       <th scope="col">Section</th>
@@ -166,45 +165,13 @@ class ExamPage extends React.Component {
       <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
       <center><h1>SBI PO 2018 Eligibility Criteria</h1></center>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
- 
-      <div class="bd-example">
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&bg=777&fg=555&text=First slide" alt="First slide"/>
-        <div class="carousel-caption d-none d-md-block">
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide"/>
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
+
   </container>
 
  
     
 
-    <footer className="footer bg-light">
+    <footer className="footer bg-light mt-5">
       <div className="container">
         <div className="row">
           <div className="col-lg-6 h-100 text-center text-lg-left my-auto">

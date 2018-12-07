@@ -30,7 +30,7 @@ class App extends React.Component {
       <div>
         <div>
           <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
-            <a className='navbar-brand' href='#'>
+            <a className='navbar-brand' href='http://localhost:8080/land'>
               Exam-Adda
             </a>
             <button
@@ -44,12 +44,14 @@ class App extends React.Component {
             >
               <span className='navbar-toggler-icon' />
             </button>
+            <ul className='navbar-nav mr-ml-auto'>
             <form className='form-inline my-2 my-lg-0'>
               <input
                 className='form-control mr-sm-2'
                 type='search'
                 placeholder='Search'
                 aria-label='Search'
+                style={{'width':'35vw'}}
               />
               <button
                 className='btn btn-outline-success my-2 my-sm-0'
@@ -58,12 +60,12 @@ class App extends React.Component {
                 Search
               </button>
             </form>
-
+            </ul>
             <div
-              className='collapse navbar-collapse'
+              className='collapse navbar-collapse ml-10'
               id='navbarSupportedContent'
             >
-              <ul className='navbar-nav'>
+              <ul className='navbar-nav ml-auto'>
                 <li className='nav-item'>
                   <a className='nav-link' href='http://localhost:8080/land'>
                     Home

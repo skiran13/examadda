@@ -14,17 +14,6 @@ class INDbank extends React.Component {
     const { user, users } = this.props
     return (
       <div>
-        <nav className='navbar navbar-light bg-light static-top'>
-          <div className='container'>
-            <a className='navbar-brand' href='#'>
-              {' '}
-              <Link style={{ color: 'black' }} to='/land'>
-                Exam-Adda
-              </Link>
-            </a>
-          </div>
-        </nav>
-
         <nav aria-label='breadcrumb'>
           <ol class='breadcrumb'>
             <li class='breadcrumb-item'>
@@ -37,6 +26,16 @@ class INDbank extends React.Component {
               Indian Bank PO
             </li>
           </ol>
+        </nav>
+        <nav className='navbar navbar-light bg-light static-top'>
+          <div className='container'>
+            <a className='navbar-brand' href='#'>
+              {' '}
+              <Link style={{ color: 'black' }} to='/land'>
+                Exam-Adda
+              </Link>
+            </a>
+          </div>
         </nav>
 
         <header className='masthead text-white text-center'>

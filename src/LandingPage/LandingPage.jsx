@@ -18,12 +18,9 @@ class LandingPage extends React.Component {
             <a className='navbar-brand' href='#'>
               {' '}
               <Link style={{ color: 'black' }} to='/land'>
-                <h3>Exam-Adda</h3>
+                <h4>Exam-Adda</h4>
               </Link>
             </a>
-            <Link className='x' to='/login'>
-              <a className='btn btn-primary'> Sign In</a>
-            </Link>
           </div>
         </nav>
 
