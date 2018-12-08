@@ -16,14 +16,14 @@ class ExamPage extends React.Component {
             <div>
               <nav aria-label="breadcrumb">
   <ol className="breadcrumb">
-    <li className="breadcrumb-item"><a href="http://localhost:8080/land">Home</a></li>
-    <li className="breadcrumb-item"><a href="#">Exams</a></li>
+    <li className="breadcrumb-item"><Link style={{'text-decoration':'none','color':'black'}} to="/land" >Home</Link></li>
+    <li className="breadcrumb-item"><Link style={{'text-decoration':'none','color':'black'}} to="/exam" >Exams</Link></li>
     <li className="breadcrumb-item active" aria-current="page">SBI PO</li>
     </ol></nav>
 
-                <nav className="navbar navbar-light bg-light static-top">
+                <nav className="navbar navbar-light bg-light static-top" style={{'border-top-right-radius':'10px','border-top-left-radius':'10px'}}>
       <div className="container">
-        <a className="navbar-brand"> <Link style={{'color':'black'}} to="/land" >Exam-Adda</Link></a>
+        <a className="navbar-brand"> <Link style={{'text-decoration':'none','color':'black'}} to="/land" ><h4><i class="fas fa-book-reader mr-2"/>Exam-Adda</h4></Link></a>
        
       </div>
     </nav>
@@ -41,7 +41,7 @@ class ExamPage extends React.Component {
             <form>
               <div className="form-row">
                 <div className="col-12">
-                <Link className='x' to="/login"><button type="submit" className="btn btn-block btn-lg btn-primary">Sign up!</button></Link>
+                <Link className='x' to="/login" style={{'text-decoration':'none'}}><button type="submit" className="btn btn-block btn-lg btn-success mt-3">Sign up!</button></Link>
                 </div>
               </div>
             </form>
@@ -56,7 +56,7 @@ class ExamPage extends React.Component {
     <div className="container">
   <div className="row">
     <div className="col-sm"  id="TestCard">
-    <div className="card">
+    <div className="card mb-4" style={{'border-radius':'10px'}}>
   <img className="card-img-top" src={require("../img/sbi.jpg")} alt="Card image cap"/>
   <div className="card-body">
     <h5 className="card-title">SBI PO - Memory Based Paper</h5>
@@ -80,7 +80,7 @@ class ExamPage extends React.Component {
 </div>
    
     
-<div className="jumbotron jumbotron-fluid">
+<div className="jumbotron jumbotron-fluid"  style={{'border-radius':'10px'}}>
 <div className="container">
 <h1><center id="Price">One Pass. All Exams. Unlimited Tests</center></h1>
   <div className="row">
@@ -171,53 +171,7 @@ class ExamPage extends React.Component {
  
     
 
-    <footer className='footer bg-light' style={{'border-radius':'10px'}}>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-lg-6 h-100 text-center text-lg-left my-auto' style={{color:'darkslategrey'}}>
-                <ul className='list-inline mb-2'>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>About</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Contact</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Terms of Use</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Privacy Policy</a>
-                  </li>
-                </ul>
-                <p className='text-muted small mb-4 mb-lg-0'>
-                  &copy; Your Website 2018. All Rights Reserved.
-                </p>
-              </div>
-              <div className='col-lg-6 h-100 text-center text-lg-right my-auto'>
-                <ul className='list-inline mb-0'>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-facebook fa-2x fa-fw' style={{color:'#495057'}}/>
-                    </a>
-                  </li>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-twitter-square fa-2x fa-fw' style={{color:'#495057'}} />
-                    </a>
-                  </li>
-                  <li className='list-inline-item'>
-                    <a href='#'>
-                      <i className='fab fa-instagram fa-2x fa-fw' style={{color:'#495057'}}/>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+   
             </div>
         );
     }

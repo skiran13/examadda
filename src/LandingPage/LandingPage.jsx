@@ -269,53 +269,7 @@ class LandingPage extends React.Component {
           </div>
         </section>
 
-        <footer className='footer bg-light' style={{'border-bottom-left-radius':'10px','border-bottom-right-radius':'10px'}}>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-lg-6 h-100 text-center text-lg-left my-auto' style={{color:'darkslategrey'}}>
-                <ul className='list-inline mb-2'>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>About</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Contact</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Terms of Use</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Privacy Policy</a>
-                  </li>
-                </ul>
-                <p className='text-muted small mb-4 mb-lg-0'>
-                  &copy; Your Website 2018. All Rights Reserved.
-                </p>
-              </div>
-              <div className='col-lg-6 h-100 text-center text-lg-right my-auto'>
-                <ul className='list-inline mb-0'>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-facebook fa-2x fa-fw' style={{color:'#495057'}}/>
-                    </a>
-                  </li>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-twitter-square fa-2x fa-fw' style={{color:'#495057'}} />
-                    </a>
-                  </li>
-                  <li className='list-inline-item'>
-                    <a href='#'>
-                      <i className='fab fa-instagram fa-2x fa-fw' style={{color:'#495057'}}/>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+      
       </div>
     )
   }
