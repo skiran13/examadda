@@ -14,7 +14,7 @@ class ExamPage extends React.Component {
         $(document).ready(function(){
           $(".owl-carousel").owlCarousel({
             
-            autoHeight:true,
+            autoHeight:false,
             margin:20,
             autoplay:true,
             autoplayTimeout:2000,
@@ -22,8 +22,18 @@ class ExamPage extends React.Component {
             loop:true,
             dots:false,
             nav:true,
-            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
-          }
+            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+	responsive: {
+		0: {
+			items: 1
+		},
+		600: {
+			items: 3
+		},
+		1000: {
+			items: 3
+		}
+	}          }
           );
         });
         
@@ -186,16 +196,43 @@ class ExamPage extends React.Component {
       <center><h1>SBI PO 2018 Eligibility Criteria</h1></center>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
-
+<div class="carousel-wrap">
 <div className="owl-carousel owl-theme ">
   
+  <div id='owl-padding'><Link to="/FEDbank"> <div className='col-lg-4'>
+                <div className='card'>
+                  <br />
+                  <br /> <br /> <br />
+                  <img
+                    className='card-img-top'
+                    src={require('../img/fb.png')}
+                    alt='Card image cap'
+                  />
+                  <div classNames='card-body'>
+                    <Link to='/FEDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
+                      <h5 className='card-title'>
+                        <br />
+                        <br /> <br /> <br />
+                        <br />
+                        Federal Bank PO
+                      </h5>
+                      <p className='card-text'>
+                        {' '}
+                        Study Materials, Mock Tests, Live tests and much more..
+                        <br />
+                        <br />
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+              </div> </Link></div>
+  <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/ib.jpg')}/> </Link></div>
+  <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/icici.jpg')}/> </Link></div>
   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
-  <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
-  <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
-  <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+</div>
 </div>
 
   </container>

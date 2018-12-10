@@ -25,7 +25,9 @@ class App extends React.Component {
   }
 
   render () {
+    let  isLoggedIn = this.props.stores.authentication.loggedIn
     const { alert } = this.props
+    console.log(this.props.stores,'jiojaioj')
     return (
       <div>
         <div>

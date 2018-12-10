@@ -11,7 +11,7 @@ configureFakeBackend();
 
 render(
     <Provider store={store}>
-        <App />
+        <App stores={store.getState()}/>
     </Provider>,
     document.getElementById('app')
 );
