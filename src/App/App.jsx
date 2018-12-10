@@ -31,6 +31,7 @@ class App extends React.Component {
         <div>
           <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
             <a className='navbar-brand' href='http://localhost:8080/land'>
+            <i class="fas fa-book-reader mr-2"/>
               Exam-Adda
             </a>
             <button
@@ -54,7 +55,7 @@ class App extends React.Component {
                 style={{'width':'35vw'}}
               />
               <button
-                className='btn btn-outline-success my-2 my-sm-0'
+                className='btn btn-outline-light my-2 my-sm-0'
                 type='submit'
               >
                 Search
@@ -71,7 +72,7 @@ class App extends React.Component {
                     Home
                   </a>
                 </li>
-                <li className='nav-item dropdown show'>
+                <li className='nav-item dropdown'>
                   <a
                     className='nav-link dropdown-toggle'
                     href='http://localhost:8080/exam'
@@ -120,7 +121,7 @@ class App extends React.Component {
                     className='nav-link active'
                     href='http://localhost:8080/login'
                   >
-                    <blink>Login</blink>
+                    Login
                   </a>
                 </li>
                 <li className='nav-item'>
@@ -134,7 +135,7 @@ class App extends React.Component {
             </div>
           </nav>
         </div>
-        <div className='jumbotron'>
+        <div className='jumbotron' style={{'background-color':'#dcdee0'}}>
           <div className='container'>
             <div>
               {alert.message && (
@@ -152,6 +153,53 @@ class App extends React.Component {
                 </div>
               </Router>
             </div>
+            <footer className='footer bg-light' style={{'border-radius':'10px'}}>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-lg-6 h-100 text-center text-lg-left my-auto' style={{color:'darkslategrey'}}>
+                <ul className='list-inline mb-2'>
+                  <li className='list-inline-item'>
+                    <a href='#'style={{color:'#495057'}}>About</a>
+                  </li>
+                  <li className='list-inline-item'>&sdot;</li>
+                  <li className='list-inline-item'>
+                    <a href='#'style={{color:'#495057'}}>Contact</a>
+                  </li>
+                  <li className='list-inline-item'>&sdot;</li>
+                  <li className='list-inline-item'>
+                    <a href='#'style={{color:'#495057'}}>Terms of Use</a>
+                  </li>
+                  <li className='list-inline-item'>&sdot;</li>
+                  <li className='list-inline-item'>
+                    <a href='#'style={{color:'#495057'}}>Privacy Policy</a>
+                  </li>
+                </ul>
+                <p className='text-muted small mb-4 mb-lg-0'>
+                  &copy; Your Website 2018. All Rights Reserved.
+                </p>
+              </div>
+              <div className='col-lg-6 h-100 text-center text-lg-right my-auto'>
+                <ul className='list-inline mb-0'>
+                  <li className='list-inline-item mr-3'>
+                    <a href='#'>
+                      <i className='fab fa-facebook fa-2x fa-fw' style={{color:'#495057'}}/>
+                    </a>
+                  </li>
+                  <li className='list-inline-item mr-3'>
+                    <a href='#'>
+                      <i className='fab fa-twitter-square fa-2x fa-fw' style={{color:'#495057'}} />
+                    </a>
+                  </li>
+                  <li className='list-inline-item'>
+                    <a href='#'>
+                      <i className='fab fa-instagram fa-2x fa-fw' style={{color:'#495057'}}/>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
           </div>
         </div>
       </div>

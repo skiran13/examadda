@@ -17,22 +17,22 @@ class FEDbank extends React.Component {
         <nav aria-label='breadcrumb'>
           <ol class='breadcrumb'>
             <li class='breadcrumb-item'>
-              <a href='http://localhost:8080/land'>Home</a>
+              <Link to='/land' style={{ 'text-decoration':'none',color: 'black' }}>Home</Link>
             </li>
             <li class='breadcrumb-item'>
-              <a href='#'>Exams</a>
+            <Link to='/land' style={{ 'text-decoration':'none',color: 'black' }}>Exams</Link>
             </li>
             <li class='breadcrumb-item active' aria-current='page'>
               Federal Bank PO
             </li>
           </ol>
         </nav>
-        <nav className='navbar navbar-light bg-light static-top'>
+        <nav className='navbar navbar-light bg-light static-top' style={{'border-top-right-radius':'10px','border-top-left-radius':'10px'}}>
           <div className='container'>
             <a className='navbar-brand' href='#'>
               {' '}
-              <Link style={{ color: 'black' }} to='/land'>
-                Exam-Adda
+              <Link style={{ 'text-decoration':'none',color: 'black' }} to='/land'>
+              <h4><i class="fas fa-book-reader mr-2"/>Exam-Adda</h4>
               </Link>
             </a>
           </div>
@@ -56,10 +56,10 @@ class FEDbank extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col-12'>
-                      <Link className='x' to='/login'>
+                      <Link className='x' to='/login'style={{'text-decoration':'none'}}>
                         <button
                           type='submit'
-                          className='btn btn-block btn-lg btn-primary'
+                          className='btn btn-block btn-lg btn-success mt-3'
                         >
                           Sign up!
                         </button>
@@ -75,7 +75,7 @@ class FEDbank extends React.Component {
         <div class='container'>
           <div class='row'>
             <div class='col-sm' id='TestCard'>
-              <div className='card'>
+              <div className='card mb-4'>
                 <br />
                 <img
                   className='card-img-top'
@@ -106,7 +106,7 @@ class FEDbank extends React.Component {
           </div>
         </div>
 
-        <div class='jumbotron jumbotron-fluid'>
+        <div class='jumbotron jumbotron-fluid'style={{'border-radius':'10px'}}>
           <div class='container'>
             <h1>
               <center id='Price'>One Pass. All Exams. Unlimited Tests</center>
@@ -281,53 +281,7 @@ class FEDbank extends React.Component {
           </p>
         </container>
 
-        <footer className='footer bg-light'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-lg-6 h-100 text-center text-lg-left my-auto'>
-                <ul className='list-inline mb-2'>
-                  <li className='list-inline-item'>
-                    <a href='#'>About</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'>Contact</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'>Terms of Use</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'>Privacy Policy</a>
-                  </li>
-                </ul>
-                <p className='text-muted small mb-4 mb-lg-0'>
-                  &copy; Your Website 2018. All Rights Reserved.
-                </p>
-              </div>
-              <div className='col-lg-6 h-100 text-center text-lg-right my-auto'>
-                <ul className='list-inline mb-0'>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-facebook fa-2x fa-fw' />
-                    </a>
-                  </li>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-twitter-square fa-2x fa-fw' />
-                    </a>
-                  </li>
-                  <li className='list-inline-item'>
-                    <a href='#'>
-                      <i className='fab fa-instagram fa-2x fa-fw' />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+     
       </div>
     )
   }

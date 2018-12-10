@@ -13,12 +13,12 @@ class LandingPage extends React.Component {
     const { user, users } = this.props
     return (
       <div>
-        <nav className='navbar navbar-light bg-light static-top'>
+        <nav className='navbar navbar-light bg-light static-top mt-3' style={{color:'#e9ecef','border-top-left-radius':'10px','border-top-right-radius':'10px'}}>
           <div className='container'>
-            <a className='navbar-brand' href='#'>
-              {' '}
-              <Link style={{ color: 'black' }} to='/land'>
-                <h4>Exam-Adda</h4>
+            <a className='navbar-brand'>
+              <Link style={{ color: 'darkslategrey',textDecoration: 'none', fontSize:'2vw' }} to='/land'>
+              <i class="fas fa-book-reader mr-2"/>
+                Exam-Adda
               </Link>
             </a>
           </div>
@@ -44,10 +44,10 @@ class LandingPage extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col-12'>
-                      <Link className='x' to='/login'>
+                      <Link className='x' to='/login' style={{textDecoration: 'none'}}>
                         <button
                           type='submit'
-                          className='btn btn-block btn-lg btn-primary'
+                          className='btn btn-block btn-lg btn-success'
                         >
                           Sign up!
                         </button>
@@ -60,7 +60,7 @@ class LandingPage extends React.Component {
           </div>
         </header>
 
-        <section className='features-icons bg-light text-center'>
+        <section className='features-icons bg-light text-center' style={{'border-bottom-left-radius':'10px','border-bottom-right-radius':'10px'}}>
           <div className='container'>
             <div className='row'>
               <div className='col-lg-4'>
@@ -71,7 +71,7 @@ class LandingPage extends React.Component {
                     alt='Card image cap'
                   />
                   <div classNames='card-body'>
-                    <Link to='/exam' style={{ color: 'black' }}>
+                    <Link to='/exam' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
                       <h5 className='card-title'> SBI PO</h5>
                       <p className='card-text'>
                         Study Materials, Mock Tests, Live tests and much more..
@@ -92,7 +92,7 @@ class LandingPage extends React.Component {
                     alt='Card image cap'
                   />
                   <div classNames='card-body'>
-                    <Link to='/FEDbank' style={{ color: 'black' }}>
+                    <Link to='/FEDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
                       <h5 className='card-title'>
                         <br />
                         <br /> <br /> <br />
@@ -118,7 +118,7 @@ class LandingPage extends React.Component {
                     alt='Card image cap'
                   />
                   <div classNames='card-body'>
-                    <Link to='/INDbank' style={{ color: 'black' }}>
+                    <Link to='/INDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
                       <br /> <br /> <br /> <br /> <br />
                       <h5 className='card-title'>Indian Bank PO</h5>
                       <p className='card-text'>
@@ -136,10 +136,10 @@ class LandingPage extends React.Component {
         <section className='showcase'>
           <div className='container-fluid p-0'>
             <div className='row no-gutters'>
-              <div className='col-lg-6 order-lg-2 text-white showcase-img' />
+              <div className='col-lg-6 order-lg-2 text-white showcase-img'/>
               <div className='col-lg-6 order-lg-1 my-auto showcase-text'>
                 <h2>Questions Expected In Actual Exams And More!</h2>
-                <p className='lead mb-0'>
+                <p className='lead mb-0' style={{color:'darkslategrey'}}>
                   Every question, every solution, meticulously created by our
                   team of toppers and experts, based on the latest exam
                   patterns. The mock tests are the closest exam experience you
@@ -151,7 +151,7 @@ class LandingPage extends React.Component {
               <div className='col-lg-6 text-white showcase-img' />
               <div className='col-lg-6 my-auto showcase-text'>
                 <h2>Detailed & Personalised Performance Analysis</h2>
-                <p className='lead mb-0'>
+                <p className='lead mb-0'style={{color:'darkslategrey'}}>
                   Studying and taking tests go hand-in-hand with performance
                   analysis. We give you the most in-depth analysis for every
                   test you take so that you can track your growth in each topic
@@ -163,7 +163,7 @@ class LandingPage extends React.Component {
               <div className='col-lg-6 order-lg-2 text-white showcase-img' />
               <div className='col-lg-6 order-lg-1 my-auto showcase-text'>
                 <h2>The Fastest Online Learning Experience</h2>
-                <p className='lead mb-0'>
+                <p className='lead mb-0' style={{color:'darkslategrey'}}>
                   We know about how precious your time is. Get the advantage of
                   the latest technology to kickstart your exam preparation and
                   get the finest learning experience - on Website and App. Check
@@ -174,7 +174,7 @@ class LandingPage extends React.Component {
           </div>
         </section>
 
-        <section className='testimonials text-center bg-light'>
+        <section className='testimonials text-center bg-light'  style={{'border-top-left-radius':'10px','border-top-right-radius':'10px'}}>
           <div className='container'>
             <h2 className='mb-5'>What users are saying...</h2>
             <div className='row'>
@@ -186,7 +186,7 @@ class LandingPage extends React.Component {
                     alt=''
                   />
                   <h5>User1</h5>
-                  <p className='font-weight-light mb-0'>
+                  <p className='font-weight-light mb-0'style={{color:'darkslategrey'}}>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -206,7 +206,7 @@ class LandingPage extends React.Component {
                     alt=''
                   />
                   <h5>User2</h5>
-                  <p className='font-weight-light mb-0'>
+                  <p className='font-weight-light mb-0' style={{color:'darkslategrey'}}>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -226,7 +226,7 @@ class LandingPage extends React.Component {
                     alt=''
                   />
                   <h5>User3</h5>
-                  <p className='font-weight-light mb-0'>
+                  <p className='font-weight-light mb-0' style={{color:'darkslategrey'}}>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -253,12 +253,12 @@ class LandingPage extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col'>
-                      <Link className='x' to='/login'>
+                      <Link className='x' to='/login' style={{textDecoration: 'none'}}>
                         <button
                           type='submit'
-                          className='btn btn-block btn-lg btn-primary'
+                          className='btn btn-block btn-lg btn-success'
                         >
-                          GET STARTED
+                          Get Started
                         </button>
                       </Link>
                     </div>
@@ -269,53 +269,7 @@ class LandingPage extends React.Component {
           </div>
         </section>
 
-        <footer className='footer bg-light'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-lg-6 h-100 text-center text-lg-left my-auto'>
-                <ul className='list-inline mb-2'>
-                  <li className='list-inline-item'>
-                    <a href='#'>About</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'>Contact</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'>Terms of Use</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'>Privacy Policy</a>
-                  </li>
-                </ul>
-                <p className='text-muted small mb-4 mb-lg-0'>
-                  &copy; Your Website 2018. All Rights Reserved.
-                </p>
-              </div>
-              <div className='col-lg-6 h-100 text-center text-lg-right my-auto'>
-                <ul className='list-inline mb-0'>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-facebook fa-2x fa-fw' />
-                    </a>
-                  </li>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-twitter-square fa-2x fa-fw' />
-                    </a>
-                  </li>
-                  <li className='list-inline-item'>
-                    <a href='#'>
-                      <i className='fab fa-instagram fa-2x fa-fw' />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+      
       </div>
     )
   }
