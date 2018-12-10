@@ -12,10 +12,22 @@ body {
 font-family: 'Open Sans', sans-serif;
     font-weight: 700;
   }
+  Link{
+    text-decoration: none;
+}
   .x{
 
     color:white
   }
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+  
   header.masthead {
     position: relative;
     background-color: #343a40;
