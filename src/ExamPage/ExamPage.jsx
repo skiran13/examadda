@@ -2,11 +2,30 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { userActions } from '../_actions'
-import '../css/ExamPage.css'
+import 'owl.carousel2/dist/assets/owl.carousel.css'
+import $ from 'jquery'
+import 'owl.carousel'
 
 class ExamPage extends React.Component {
   componentDidMount () {
     this.props.dispatch(userActions.getAll())
+
+    $(document).ready(function () {
+      $('.owl-carousel').owlCarousel({
+        autoHeight: true,
+        margin: 20,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        loop: true,
+        dots: false,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>"
+        ]
+      })
+    })
   }
 
   render () {
@@ -288,6 +307,50 @@ class ExamPage extends React.Component {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
+          <div className='owl-carousel owl-theme '>
+            <div id='owl-padding'>
+              <Link to='/FEDbank'>
+                {' '}
+                <img src={require('../img/fb.png')} />{' '}
+              </Link>
+            </div>
+            <div id='owl-padding'>
+              <Link to='/FEDbank'>
+                {' '}
+                <img src={require('../img/fb.png')} />{' '}
+              </Link>
+            </div>
+            <div id='owl-padding'>
+              <Link to='/FEDbank'>
+                {' '}
+                <img src={require('../img/fb.png')} />{' '}
+              </Link>
+            </div>
+            <div id='owl-padding'>
+              <Link to='/FEDbank'>
+                {' '}
+                <img src={require('../img/fb.png')} />{' '}
+              </Link>
+            </div>
+            <div id='owl-padding'>
+              <Link to='/FEDbank'>
+                {' '}
+                <img src={require('../img/fb.png')} />{' '}
+              </Link>
+            </div>
+            <div id='owl-padding'>
+              <Link to='/FEDbank'>
+                {' '}
+                <img src={require('../img/fb.png')} />{' '}
+              </Link>
+            </div>
+            <div id='owl-padding'>
+              <Link to='/FEDbank'>
+                {' '}
+                <img src={require('../img/fb.png')} />{' '}
+              </Link>
+            </div>
+          </div>
         </container>
       </div>
     )

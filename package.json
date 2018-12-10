@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "history": "^4.6.3",
+    "jquery": "^3.3.1",
+    "owl.carousel2": "^2.2.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-items-carousel": "^2.2.1",
+    "react-owl-carousel": "^2.3.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2",
