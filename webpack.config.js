@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.jsx',
@@ -32,8 +33,14 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
-        inject: 'body'
-    })],
+        inject: 'body',
+    }),
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
+        })],
+        
     devServer: {
         historyApiFallback: true
     },
