@@ -76,7 +76,6 @@ class FEDbank extends React.Component {
           <div class='row'>
             <div class='col-sm' id='TestCard'>
               <div className='card'>
-                <br />
                 <img
                   className='card-img-top'
                   src={require('../img/fb.png')}
