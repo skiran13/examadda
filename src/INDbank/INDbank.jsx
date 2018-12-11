@@ -16,19 +16,45 @@ class INDbank extends React.Component {
       <div>
         <nav aria-label='breadcrumb'>
           <ol class='breadcrumb'>
-          <li className="breadcrumb-item"><Link style={{'text-decoration':'none','color':'black'}} to="/land" >Home</Link></li>
-    <li className="breadcrumb-item"><Link style={{'text-decoration':'none','color':'black'}} to="/exam" >Exams</Link></li>
+            <li className='breadcrumb-item'>
+              <Link
+                style={{ 'text-decoration': 'none', color: 'black' }}
+                to='/land'
+              >
+                Home
+              </Link>
+            </li>
+            <li className='breadcrumb-item'>
+              <Link
+                style={{ 'text-decoration': 'none', color: 'black' }}
+                to='/exam'
+              >
+                Exams
+              </Link>
+            </li>
             <li class='breadcrumb-item active' aria-current='page'>
               Indian Bank PO
             </li>
           </ol>
         </nav>
-        <nav className='navbar navbar-light bg-light static-top' style={{'border-top-right-radius':'10px','border-top-left-radius':'10px'}}>
+        <nav
+          className='navbar navbar-light bg-light static-top'
+          style={{
+            'border-top-right-radius': '10px',
+            'border-top-left-radius': '10px'
+          }}
+        >
           <div className='container'>
             <a className='navbar-brand' href='#'>
               {' '}
-              <Link style={{'text-decoration':'none', color: 'black' }} to='/land'>
-              <h4><i class="fas fa-book-reader mr-2"/>Exam-Adda</h4>
+              <Link
+                style={{ 'text-decoration': 'none', color: 'black' }}
+                to='/land'
+              >
+                <h4>
+                  <i class='fas fa-book-reader mr-2' />
+                  Exam-Adda
+                </h4>
               </Link>
             </a>
           </div>
@@ -52,7 +78,11 @@ class INDbank extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col-12'>
-                      <Link className='x' to='/login' style={{'text-decoration':'none'}}>
+                      <Link
+                        className='x'
+                        to='/login'
+                        style={{ 'text-decoration': 'none' }}
+                      >
                         <button
                           type='submit'
                           className='btn btn-block btn-lg btn-success mt-3'
@@ -90,7 +120,10 @@ class INDbank extends React.Component {
                     <hr />
                   </p>
 
-                  <a href='#' className='btn btn-primary btn btn-block'>
+                  <a
+                    href='http://localhost:8080/genINST'
+                    className='btn btn-primary btn btn-block'
+                  >
                     Start Now
                   </a>
                 </div>
@@ -101,7 +134,10 @@ class INDbank extends React.Component {
           </div>
         </div>
 
-        <div class='jumbotron jumbotron-fluid'style={{'border-radius':'10px'}}>
+        <div
+          class='jumbotron jumbotron-fluid'
+          style={{ 'border-radius': '10px' }}
+        >
           <div class='container'>
             <h1>
               <center id='Price'>One Pass. All Exams. Unlimited Tests</center>
@@ -257,8 +293,6 @@ class INDbank extends React.Component {
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
         </container>
-
-       
       </div>
     )
   }

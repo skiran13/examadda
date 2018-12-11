@@ -7,7 +7,7 @@ import { userActions } from '../_actions';
 class HomePage extends React.Component {
     componentDidMount() {
         this.props.dispatch(userActions.getAll());
-    }
+         }
 
     render() {
         const { user, users } = this.props;
@@ -18,7 +18,8 @@ class HomePage extends React.Component {
                 <p>You're logged in with React!!</p>
                
                 <p>
-                    <Link to="/login">Logout</Link>
+                    <Link to="/login" onClick={e=>{ this.props.dispatch(userActions.logout())
+                    window.location.href='/login'}}>Logout</Link>
                 </p>
             </div>
         );
