@@ -56,9 +56,9 @@ class ProfilePage extends React.Component {
          
                        
                   <div class="panel panel-default">
-                    <div class="panel-heading"><strong>Social Media</strong></div>
+                    <div class="panel-heading mb-1"><strong>Social Media</strong></div>
                     <div class="panel-body">
-                    <i class="fab fa-facebook fa-2x mr-3"></i> <i class="fab fa-github fa-2x mr-3"></i> <i class="fab fa-twitter fa-2x"></i>
+                    <i class="fab fa-facebook fa-2x mx-2"></i> <i class="fab fa-github fa-2x mx-2"></i> <i class="fab fa-twitter fa-2x mx-2"></i>
                     </div>
                   </div>
                   
@@ -93,12 +93,7 @@ class ProfilePage extends React.Component {
                                   </div>
                               </div>
                   
-                              <div class="form-group">
-                                  <div class="col-xs-6">
-                                     <label for="mobile"><h4>Mobile</h4></label>
-                                      <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Enter Mobile Number" title="enter your mobile number if any."/>
-                                  </div>
-                              </div>
+                              
                               <div class="form-group">
                                   
                                   <div class="col-xs-6">
@@ -106,13 +101,9 @@ class ProfilePage extends React.Component {
                                       <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email."/>
                                   </div>
                               </div>
-                              <div class="form-group">
+                              
                                   
-                                  <div class="col-xs-6">
-                                      <label for="email"><h4>Location</h4></label>
-                                      <input type="email" class="form-control" id="location" placeholder="Location" title="enter a location"/>
-                                  </div>
-                              </div>
+                                 
                               <div class="form-group">
                                   
                                   <div class="col-xs-6">
