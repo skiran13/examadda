@@ -20,7 +20,7 @@ class LandingPage extends React.Component {
           <div className='container'>
             <a className='navbar-brand'>
               <Link style={{ color: 'darkslategrey',textDecoration: 'none', fontSize:'2vw' }} to='/land'>
-              <i class="fas fa-book-reader mr-2"/>
+              <i className="fas fa-book-reader mr-2"/>
                 Exam-Adda
               </Link>
             </a>
@@ -47,7 +47,7 @@ class LandingPage extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col-12'>
-                      <Link className='x' to='/login' style={{textDecoration: 'none'}}>
+                      <Link className='x' to='/register' style={{textDecoration: 'none'}}>
                         <button
                           type='submit'
                           className='btn btn-block btn-lg btn-success'

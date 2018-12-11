@@ -71,7 +71,7 @@ class ExamPage extends React.Component {
                 to='/land'
               >
                 <h4>
-                  <i class='fas fa-book-reader mr-2' />
+                  <i className='fas fa-book-reader mr-2' />
                   Exam-Adda
                 </h4>
               </Link>

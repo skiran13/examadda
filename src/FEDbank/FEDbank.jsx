@@ -15,8 +15,8 @@ class FEDbank extends React.Component {
     return (
       <div>
         <nav aria-label='breadcrumb'>
-          <ol class='breadcrumb'>
-            <li class='breadcrumb-item'>
+          <ol className='breadcrumb'>
+            <li className='breadcrumb-item'>
               <Link
                 to='/land'
                 style={{ 'text-decoration': 'none', color: 'black' }}
@@ -24,7 +24,7 @@ class FEDbank extends React.Component {
                 Home
               </Link>
             </li>
-            <li class='breadcrumb-item'>
+            <li className='breadcrumb-item'>
               <Link
                 to='/land'
                 style={{ 'text-decoration': 'none', color: 'black' }}
@@ -32,27 +32,27 @@ class FEDbank extends React.Component {
                 Exams
               </Link>
             </li>
-            <li class='breadcrumb-item active' aria-current='page'>
+            <li className='breadcrumb-item active' aria-current='page'>
               Federal Bank PO
             </li>
           </ol>
         </nav>
         <nav
-          className='navbar navbar-light bg-light static-top'
+          classNameName='navbar navbar-light bg-light static-top'
           style={{
             'border-top-right-radius': '10px',
             'border-top-left-radius': '10px'
           }}
         >
-          <div className='container'>
-            <a className='navbar-brand' href='#'>
+          <div classNameName='container'>
+            <a classNameName='navbar-brand' href='#'>
               {' '}
               <Link
                 style={{ 'text-decoration': 'none', color: 'black' }}
                 to='/land'
               >
                 <h4>
-                  <i class='fas fa-book-reader mr-2' />
+                  <i className='fas fa-book-reader mr-2' />
                   Exam-Adda
                 </h4>
               </Link>
@@ -60,12 +60,12 @@ class FEDbank extends React.Component {
           </div>
         </nav>
 
-        <header className='masthead text-white text-center'>
-          <div className='overlay' />
-          <div className='container'>
-            <div className='row'>
-              <div className='col-xl-9 mx-auto'>
-                <h1 className='mb-5'>Federal Bank PO</h1>
+        <header classNameName='masthead text-white text-center'>
+          <div classNameName='overlay' />
+          <div classNameName='container'>
+            <div classNameName='row'>
+              <div classNameName='col-xl-9 mx-auto'>
+                <h1 classNameName='mb-5'>Federal Bank PO</h1>
                 <h5>
                   Federal Bank PO 2018 Exam is a wonderful opportunity for you
                   to turn your dreams into reality! Get all information about
@@ -74,18 +74,18 @@ class FEDbank extends React.Component {
                   Kickstart your preparation with Online Test Series now!
                 </h5>
               </div>
-              <div className='col-md-10 col-lg-8 col-xl-7 mx-auto'>
+              <div classNameName='col-md-10 col-lg-8 col-xl-7 mx-auto'>
                 <form>
-                  <div className='form-row'>
-                    <div className='col-12'>
+                  <div classNameName='form-row'>
+                    <div classNameName='col-12'>
                       <Link
-                        className='x'
+                        classNameName='x'
                         to='/login'
                         style={{ 'text-decoration': 'none' }}
                       >
                         <button
                           type='submit'
-                          className='btn btn-block btn-lg btn-success mt-3'
+                          classNameName='btn btn-block btn-lg btn-success mt-3'
                         >
                           Sign up!
                         </button>
@@ -98,21 +98,21 @@ class FEDbank extends React.Component {
           </div>
         </header>
 
-        <div class='container'>
-          <div class='row'>
-            <div class='col-sm' id='TestCard'>
-              <div className='card mb-4'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-sm' id='TestCard'>
+              <div classNameName='card mb-4'>
                 <br />
                 <img
-                  className='card-img-top'
+                  classNameName='card-img-top'
                   src={require('../img/fb.png')}
                   alt='Card image cap'
                 />
-                <div className='card-body'>
-                  <h5 className='card-title'>
+                <div classNameName='card-body'>
+                  <h5 classNameName='card-title'>
                     Federal Bank PO - Memory Based Paper
                   </h5>
-                  <p className='card-text'>
+                  <p classNameName='card-text'>
                     <b>150</b> QUESTIONS
                     <hr />
                     <b>150</b> MARKS
@@ -123,67 +123,67 @@ class FEDbank extends React.Component {
 
                   <a
                     href='http://localhost:8080/genINST'
-                    className='btn btn-primary btn btn-block'
+                    classNameName='btn btn-primary btn btn-block'
                   >
                     Start Now
                   </a>
                 </div>
               </div>
             </div>
-            <div class='col-sm' />
-            <div class='col-sm' />
+            <div className='col-sm' />
+            <div className='col-sm' />
           </div>
         </div>
 
         <div
-          class='jumbotron jumbotron-fluid'
+          className='jumbotron jumbotron-fluid'
           style={{ 'border-radius': '10px' }}
         >
-          <div class='container'>
+          <div className='container'>
             <h1>
               <center id='Price'>One Pass. All Exams. Unlimited Tests</center>
             </h1>
-            <div class='row'>
-              <div class='col-sm'>
-                <div className='card'>
-                  <div className='card-body'>
-                    <h3 className='card-title text-center'>YEARLY PRICE</h3>
-                    <p className='card-text'>
+            <div className='row'>
+              <div className='col-sm'>
+                <div classNameName='card'>
+                  <div classNameName='card-body'>
+                    <h3 classNameName='card-title text-center'>YEARLY PRICE</h3>
+                    <p classNameName='card-text'>
                       <center>
                         <b>₹599</b> for 12 months
                       </center>
                     </p>
-                    <a href='#' className='btn btn-success btn btn-block'>
+                    <a href='#' classNameName='btn btn-success btn btn-block'>
                       BUY PASS
                     </a>
                   </div>
                 </div>
               </div>
-              <div class='col-sm'>
-                <div className='card'>
-                  <div className='card-body'>
-                    <h3 className='card-title text-center'>4 MONTHS PRICE</h3>
-                    <p className='card-text'>
+              <div className='col-sm'>
+                <div classNameName='card'>
+                  <div classNameName='card-body'>
+                    <h3 classNameName='card-title text-center'>4 MONTHS PRICE</h3>
+                    <p classNameName='card-text'>
                       <center>
                         <b>₹400</b> for 4 months
                       </center>
                     </p>
-                    <a href='#' className='btn btn-danger btn btn-block'>
+                    <a href='#' classNameName='btn btn-danger btn btn-block'>
                       BUY PASS
                     </a>
                   </div>
                 </div>
               </div>
-              <div class='col-sm'>
-                <div className='card'>
-                  <div className='card-body'>
-                    <h3 className='card-title text-center'>2 MONTHS PRICE</h3>
-                    <p className='card-text'>
+              <div className='col-sm'>
+                <div classNameName='card'>
+                  <div classNameName='card-body'>
+                    <h3 classNameName='card-title text-center'>2 MONTHS PRICE</h3>
+                    <p classNameName='card-text'>
                       <center>
                         <b>₹200</b> for 2 months
                       </center>
                     </p>
-                    <a href='#' className='btn btn-warning btn btn-block'>
+                    <a href='#' classNameName='btn btn-warning btn btn-block'>
                       BUY PASS
                     </a>
                   </div>
@@ -208,7 +208,7 @@ class FEDbank extends React.Component {
           <center>
             <h2>Federal Bank PO 2018 Exam Pattern</h2>
           </center>
-          <table class='table table-bordered'>
+          <table className='table table-bordered'>
             <thead>
               <tr>
                 <th scope='col'>Section</th>

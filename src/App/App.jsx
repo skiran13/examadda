@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route } from 'react-router-dom'
+import { BrowserRouter, Route,Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { history } from '../_helpers'
 import { alertActions } from '../_actions'
@@ -26,13 +26,14 @@ class App extends React.Component {
   }
 
   render () {
+    let isLoggedIn=this.props.authentication.loggedIn
     const { alert } = this.props
     return (
       <div>
         <div>
           <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
             <a className='navbar-brand' href='http://localhost:8080/land'>
-            <i class="fas fa-book-reader mr-2"/>
+              <i className='fas fa-book-reader mr-2' />
               Exam-Adda
             </a>
             <button
@@ -86,20 +87,20 @@ class App extends React.Component {
                     Exams
                   </a>
                   <div
-                    class='dropdown-menu hide'
+                    className='dropdown-menu hide'
                     aria-labelledby='navbarDropdown'
                   >
-                    <a class='dropdown-item' href='http://localhost:8080/exam'>
+                    <a className='dropdown-item' href='http://localhost:8080/exam'>
                       SBI PO
                     </a>
                     <a
-                      class='dropdown-item'
+                      className='dropdown-item'
                       href='http://localhost:8080/FEDbank'
                     >
                       Federal Bank PO
                     </a>
                     <a
-                      class='dropdown-item'
+                      className='dropdown-item'
                       href='http://localhost:8080/INDbank'
                     >
                       Indian Bank
@@ -117,7 +118,7 @@ class App extends React.Component {
                   </a>
                 </li>
 
-                <li className='nav-item'>
+                {(!isLoggedIn)?(<div className="navItem" style={{'display':'-webkit-box'}}><li className='nav-item'>
                   <a
                     className='nav-link active'
                     href='http://localhost:8080/login'
@@ -127,11 +128,31 @@ class App extends React.Component {
                 </li>
                 <li className='nav-item'>
                   <a href='http://localhost:8080/register'>
-                    <button type='button' class='btn btn-outline-light'>
+                    <button type='button' className='btn btn-outline-light'>
                       Signup
                     </button>
                   </a>
-                </li>
+                </li></div>):(<li className='nav-item'>
+                 
+                   
+                    <div className="btn-group nav-link py-0 mt-1">
+                    <a href="http://localhost:8080/" role="button" className="btn btn-sm btn-outline-light">{user.firstName}</a>
+  
+                    <button type="button" className="btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span className="sr-only">Toggle Dropdown</span>
+  </button>
+
+
+  <div className="dropdown-menu dropdown-menu-right">
+    <a className="dropdown-item" href="http://localhost:8080/profile">Profile</a>
+    <a className="dropdown-item" href="http://localhost:8080/land">Dashboard</a>
+    <a className="dropdown-item" onClick={e=>{ this.props.dispatch(userActions.logout())
+                   }} href='http://localhost:8080/'>Logout</a>
+    
+  </div>
+</div>
+                  
+                </li>)}
               </ul>
             </div>
           </nav>
@@ -142,7 +163,7 @@ class App extends React.Component {
               {alert.message && (
                 <div className={`alert ${alert.type}`}>{alert.message}</div>
               )}
-              <Router history={history}>
+              <BrowserRouter history={history}>
                 <div>
                   <PrivateRoute exact path='/' component={HomePage} />
                   <Route path='/login' component={LoginPage} />
@@ -155,7 +176,7 @@ class App extends React.Component {
                 
 
                 </div>
-              </Router>
+              </BrowserRouter>
             </div>
             <footer className='footer bg-light' style={{'border-radius':'10px'}}>
           <div className='container'>

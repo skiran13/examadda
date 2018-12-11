@@ -15,7 +15,7 @@ class INDbank extends React.Component {
     return (
       <div>
         <nav aria-label='breadcrumb'>
-          <ol class='breadcrumb'>
+          <ol className='breadcrumb'>
             <li className='breadcrumb-item'>
               <Link
                 style={{ 'text-decoration': 'none', color: 'black' }}
@@ -32,7 +32,7 @@ class INDbank extends React.Component {
                 Exams
               </Link>
             </li>
-            <li class='breadcrumb-item active' aria-current='page'>
+            <li className='breadcrumb-item active' aria-current='page'>
               Indian Bank PO
             </li>
           </ol>
@@ -52,7 +52,7 @@ class INDbank extends React.Component {
                 to='/land'
               >
                 <h4>
-                  <i class='fas fa-book-reader mr-2' />
+                  <i className='fas fa-book-reader mr-2' />
                   Exam-Adda
                 </h4>
               </Link>
@@ -98,9 +98,9 @@ class INDbank extends React.Component {
           </div>
         </header>
 
-        <div class='container'>
-          <div class='row'>
-            <div class='col-sm' id='TestCard'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-sm' id='TestCard'>
               <div className='card mb-4'>
                 <img
                   className='card-img-top'
@@ -129,21 +129,21 @@ class INDbank extends React.Component {
                 </div>
               </div>
             </div>
-            <div class='col-sm' />
-            <div class='col-sm' />
+            <div className='col-sm' />
+            <div className='col-sm' />
           </div>
         </div>
 
         <div
-          class='jumbotron jumbotron-fluid'
+          className='jumbotron jumbotron-fluid'
           style={{ 'border-radius': '10px' }}
         >
-          <div class='container'>
+          <div className='container'>
             <h1>
               <center id='Price'>One Pass. All Exams. Unlimited Tests</center>
             </h1>
-            <div class='row'>
-              <div class='col-sm'>
+            <div className='row'>
+              <div className='col-sm'>
                 <div className='card'>
                   <div className='card-body'>
                     <h3 className='card-title text-center'>YEARLY PRICE</h3>
@@ -158,7 +158,7 @@ class INDbank extends React.Component {
                   </div>
                 </div>
               </div>
-              <div class='col-sm'>
+              <div className='col-sm'>
                 <div className='card'>
                   <div className='card-body'>
                     <h3 className='card-title text-center'>4 MONTHS PRICE</h3>
@@ -173,7 +173,7 @@ class INDbank extends React.Component {
                   </div>
                 </div>
               </div>
-              <div class='col-sm'>
+              <div className='col-sm'>
                 <div className='card'>
                   <div className='card-body'>
                     <h3 className='card-title text-center'>2 MONTHS PRICE</h3>
@@ -208,7 +208,7 @@ class INDbank extends React.Component {
             <h2>Indian Bank PO 2018 Exam Pattern</h2>
             <br />
           </center>
-          <table class='table table-bordered'>
+          <table className='table table-bordered'>
             <thead>
               <tr>
                 <th scope='col'>Section</th>
