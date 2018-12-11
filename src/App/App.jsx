@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route } from 'react-router-dom'
+import { BrowserRouter, Route,Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { history } from '../_helpers'
 import { alertActions,userActions } from '../_actions'
@@ -48,7 +48,7 @@ class App extends React.Component {
         <div>
           <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
             <a className='navbar-brand' href='http://localhost:8080/land'>
-              <i class='fas fa-book-reader mr-2' />
+              <i className='fas fa-book-reader mr-2' />
               Exam-Adda
             </a>
             <button
@@ -104,20 +104,20 @@ class App extends React.Component {
                     Exams
                   </a>
                   <div
-                    class='dropdown-menu hide'
+                    className='dropdown-menu hide'
                     aria-labelledby='navbarDropdown'
                   >
-                    <a class='dropdown-item' href='http://localhost:8080/exam'>
+                    <a className='dropdown-item' href='http://localhost:8080/exam'>
                       SBI PO
                     </a>
                     <a
-                      class='dropdown-item'
+                      className='dropdown-item'
                       href='http://localhost:8080/FEDbank'
                     >
                       Federal Bank PO
                     </a>
                     <a
-                      class='dropdown-item'
+                      className='dropdown-item'
                       href='http://localhost:8080/INDbank'
                     >
                       Indian Bank
@@ -145,26 +145,26 @@ class App extends React.Component {
                 </li>
                 <li className='nav-item'>
                   <a href='http://localhost:8080/register'>
-                    <button type='button' class='btn btn-outline-light'>
+                    <button type='button' className='btn btn-outline-light'>
                       Signup
                     </button>
                   </a>
                 </li></div>):(<li className='nav-item'>
                  
                    
-                    <div class="btn-group nav-link py-0 mt-1">
-                    <button type="button" class="btn btn-sm btn-outline-light">{user.firstName}</button>
+                    <div className="btn-group nav-link py-0 mt-1">
+                    <a href="http://localhost:8080/" role="button" className="btn btn-sm btn-outline-light">{user.firstName}</a>
   
-                    <button type="button" class="btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
+                    <button type="button" className="btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span className="sr-only">Toggle Dropdown</span>
   </button>
 
 
-  <div class="dropdown-menu dropdown-menu-right">
-    <a class="dropdown-item" href="http://localhost:8080/profile">Profile</a>
-    <a class="dropdown-item" href="http://localhost:8080/land">Dashboard</a>
-    <a class="dropdown-item" onClick={e=>{ this.props.dispatch(userActions.logout())
-                    href='http://localhost:8080/login'}}>Logout</a>
+  <div className="dropdown-menu dropdown-menu-right">
+    <a className="dropdown-item" href="http://localhost:8080/profile">Profile</a>
+    <a className="dropdown-item" href="http://localhost:8080/land">Dashboard</a>
+    <a className="dropdown-item" onClick={e=>{ this.props.dispatch(userActions.logout())
+                   }} href='http://localhost:8080/'>Logout</a>
     
   </div>
 </div>
@@ -180,7 +180,7 @@ class App extends React.Component {
               {alert.message && (
                 <div className={`alert ${alert.type}`}>{alert.message}</div>
               )}
-              <Router history={history}>
+              <BrowserRouter history={history}>
                 <div>
                   <PrivateRoute exact path='/' component={HomePage} />
                   <Route path='/login' component={LoginPage} />
@@ -191,7 +191,7 @@ class App extends React.Component {
                   <Route path='/INDbank' component={INDbank} />
                   <Route path='/genINST' component={genINST} />
                 </div>
-              </Router>
+              </BrowserRouter>
             </div>
             <footer
               className='footer bg-light'
