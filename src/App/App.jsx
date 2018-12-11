@@ -1,8 +1,9 @@
+
 import React from 'react'
 import { BrowserRouter, Route,Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { history } from '../_helpers'
-import { alertActions } from '../_actions'
+import { alertActions,userActions } from '../_actions'
 import { PrivateRoute } from '../_components'
 import '../css/landing-page.css'
 import { HomePage } from '../HomePage'
@@ -12,22 +13,38 @@ import { RegisterPage } from '../RegisterPage'
 import { ExamPage } from '../ExamPage'
 import { FEDbank } from '../FEDbank'
 import { INDbank } from '../INDbank'
-import { ProfilePage } from '../ProfilePage'
+import { genINST } from '../genINST'
+import {ProfilePage} from '../ProfilePage'
 
 class App extends React.Component {
   constructor (props) {
-    super(props);
-
+    super(props)
+      this.state={ list: ['SBI PO','Federal Bank PO','Indian Bank PO']}   
     const { dispatch } = this.props
     history.listen((location, action) => {
       // clear alert on location change
       dispatch(alertActions.clear())
     })
+    this.handleChange = this.handleChange.bind(this);
   }
+  handleChange(e){
+    console.log(e.target.value)
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(this.state.list).filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  }
+  
 
   render () {
-    let isLoggedIn=this.props.authentication.loggedIn
+    let  isLoggedIn = this.props.stores.authentication.loggedIn
+    let user = this.props.stores.authentication.user
     const { alert } = this.props
+    console.log(this.props.stores.authentication,'jiojaioj')
     return (
       <div>
         <div>
@@ -48,21 +65,23 @@ class App extends React.Component {
               <span className='navbar-toggler-icon' />
             </button>
             <ul className='navbar-nav mr-ml-auto'>
-            <form className='form-inline my-2 my-lg-0'>
-              <input
-                className='form-control mr-sm-2'
-                type='search'
-                placeholder='Search'
-                aria-label='Search'
-                style={{'width':'35vw'}}
-              />
-              <button
-                className='btn btn-outline-light my-2 my-sm-0'
-                type='submit'
-              >
-                Search
-              </button>
-            </form>
+              <form className='form-inline my-2 my-lg-0'>
+                <input
+                  className='form-control mr-sm-2'
+                  type='search'
+                  placeholder='Search'
+                  aria-label='Search'
+                  onChange={this.handleChange}
+                  style={{ width: '35vw' }}
+                />
+                <button
+                  className='btn btn-outline-light my-2 my-sm-0'
+                  type='submit'
+                  id='myInput'
+                >
+                  Search
+                </button>
+              </form>
             </ul>
             <div
               className='collapse navbar-collapse ml-10'
@@ -118,7 +137,7 @@ class App extends React.Component {
                   </a>
                 </li>
 
-                {(!isLoggedIn)?(<div className="navItem" style={{'display':'-webkit-box'}}><li className='nav-item'>
+                {(!isLoggedIn)?(<div className='nav-item' style={{'display':'-webkit-box'}}><li className='nav-item'>
                   <a
                     className='nav-link active'
                     href='http://localhost:8080/login'
@@ -157,7 +176,7 @@ class App extends React.Component {
             </div>
           </nav>
         </div>
-        <div className='jumbotron' style={{'background-color':'#dcdee0'}}>
+        <div className='jumbotron' style={{ 'background-color': '#dcdee0' }}>
           <div className='container'>
             <div>
               {alert.message && (
@@ -172,59 +191,81 @@ class App extends React.Component {
                   <Route path='/exam' component={ExamPage} />
                   <Route path='/FEDbank' component={FEDbank} />
                   <Route path='/INDbank' component={INDbank} />
-                  <Route path='/profile' component={ProfilePage} />
-                
-
+                  <Route path='/genINST' component={genINST} />
+                  <Route path='/profile' component={ProfilePage} />                
                 </div>
               </BrowserRouter>
             </div>
-            <footer className='footer bg-light' style={{'border-radius':'10px'}}>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-lg-6 h-100 text-center text-lg-left my-auto' style={{color:'darkslategrey'}}>
-                <ul className='list-inline mb-2'>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>About</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Contact</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Terms of Use</a>
-                  </li>
-                  <li className='list-inline-item'>&sdot;</li>
-                  <li className='list-inline-item'>
-                    <a href='#'style={{color:'#495057'}}>Privacy Policy</a>
-                  </li>
-                </ul>
-                <p className='text-muted small mb-4 mb-lg-0'>
-                  &copy; Your Website 2018. All Rights Reserved.
-                </p>
+            <footer
+              className='footer bg-light'
+              style={{ 'border-radius': '10px' }}
+            >
+              <div className='container'>
+                <div className='row'>
+                  <div
+                    className='col-lg-6 h-100 text-center text-lg-left my-auto'
+                    style={{ color: 'darkslategrey' }}
+                  >
+                    <ul className='list-inline mb-2'>
+                      <li className='list-inline-item'>
+                        <a href='#' style={{ color: '#495057' }}>
+                          About
+                        </a>
+                      </li>
+                      <li className='list-inline-item'>&sdot;</li>
+                      <li className='list-inline-item'>
+                        <a href='#' style={{ color: '#495057' }}>
+                          Contact
+                        </a>
+                      </li>
+                      <li className='list-inline-item'>&sdot;</li>
+                      <li className='list-inline-item'>
+                        <a href='#' style={{ color: '#495057' }}>
+                          Terms of Use
+                        </a>
+                      </li>
+                      <li className='list-inline-item'>&sdot;</li>
+                      <li className='list-inline-item'>
+                        <a href='#' style={{ color: '#495057' }}>
+                          Privacy Policy
+                        </a>
+                      </li>
+                    </ul>
+                    <p className='text-muted small mb-4 mb-lg-0'>
+                      &copy; Your Website 2018. All Rights Reserved.
+                    </p>
+                  </div>
+                  <div className='col-lg-6 h-100 text-center text-lg-right my-auto'>
+                    <ul className='list-inline mb-0'>
+                      <li className='list-inline-item mr-3'>
+                        <a href='#'>
+                          <i
+                            className='fab fa-facebook fa-2x fa-fw'
+                            style={{ color: '#495057' }}
+                          />
+                        </a>
+                      </li>
+                      <li className='list-inline-item mr-3'>
+                        <a href='#'>
+                          <i
+                            className='fab fa-twitter-square fa-2x fa-fw'
+                            style={{ color: '#495057' }}
+                          />
+                        </a>
+                      </li>
+                      <li className='list-inline-item'>
+                        <a href='#'>
+                          <i
+                            className='fab fa-instagram fa-2x fa-fw'
+                            style={{ color: '#495057' }}
+                          />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div className='col-lg-6 h-100 text-center text-lg-right my-auto'>
-                <ul className='list-inline mb-0'>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-facebook fa-2x fa-fw' style={{color:'#495057'}}/>
-                    </a>
-                  </li>
-                  <li className='list-inline-item mr-3'>
-                    <a href='#'>
-                      <i className='fab fa-twitter-square fa-2x fa-fw' style={{color:'#495057'}} />
-                    </a>
-                  </li>
-                  <li className='list-inline-item'>
-                    <a href='#'>
-                      <i className='fab fa-instagram fa-2x fa-fw' style={{color:'#495057'}}/>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+            </footer>
           </div>
         </div>
       </div>
@@ -234,6 +275,7 @@ class App extends React.Component {
 
 function mapStateToProps (state) {
   const { alert } = state
+
   return {
     alert
   }
