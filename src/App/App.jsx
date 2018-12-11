@@ -135,7 +135,7 @@ class App extends React.Component {
                   </a>
                 </li>
 
-                {(!isLoggedIn)?(<div className='nav-item' style={{'display':'contents'}}><li className='nav-item'>
+                {(!isLoggedIn)?(<div className='nav-item' style={{'display':'-webkit-box'}}><li className='nav-item'>
                   <a
                     className='nav-link active'
                     href='http://localhost:8080/login'
