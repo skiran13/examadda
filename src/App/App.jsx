@@ -13,8 +13,9 @@ import { ExamPage } from '../ExamPage'
 import { FEDbank } from '../FEDbank'
 import { INDbank } from '../INDbank'
 import { genINST } from '../genINST'
-import { ProfilePage } from '../ProfilePage'
 import { Tests } from '../Tests'
+import { ProfilePage } from '../ProfilePage'
+
 
 class App extends React.Component {
   constructor (props) {
