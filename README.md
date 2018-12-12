@@ -1,5 +1,6 @@
-		      DOCUMENTATION
+# 							DOCUMENTATION
 ## 1)	Website landing page
+
     Displays search bar, navigation bar including signup/login option. (Search bar is to be added)
 
 ## 2)Searching an Exam
