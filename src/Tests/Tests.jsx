@@ -14,7 +14,7 @@ class Tests extends React.Component {
       <div className='jumbotron' style={{ 'background-color': '#dcdee0' }}>
         <div class='row'>
           <div class='col-sm-3'>
-            <div class='card'>
+            
               <div className='card mb-4' style={{ 'border-radius': '10px' }}>
                 <img
                   className='card-img-top'
@@ -44,13 +44,13 @@ class Tests extends React.Component {
                   </a>
                 </div>
               </div>
-            </div>
+            
             <div className='col-sm' />
             <div className='col-sm' />
           </div>
           <div class='col-sm-3'>
-            <div class='card'>
-              <div className='card mb-4'>
+            
+              <div className='card mb-4'style={{ 'border-radius': '10px' }}>
                 <br />
                 <br />
                 <br />
@@ -83,13 +83,13 @@ class Tests extends React.Component {
                   </a>
                 </div>
               </div>
-            </div>
+            
             <div class='col-sm' />
             <div class='col-sm' />
           </div>
           <div class='col-sm-3'>
-            <div class='card'>
-              <div className='card mb-4'>
+            
+              <div className='card mb-4'style={{ 'border-radius': '10px' }}>
                 <br />
 
                 <br />
@@ -122,7 +122,7 @@ class Tests extends React.Component {
                   </a>
                 </div>
               </div>
-            </div>
+            
             <div className='col-sm' />
             <div className='col-sm' />
           </div>

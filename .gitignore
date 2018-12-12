@@ -30,6 +30,7 @@ build/Release
 node_modules
 jspm_packages
 typings
+src/server/node_modules
 
 # Optional npm cache directory
 .npm
