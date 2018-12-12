@@ -71,25 +71,26 @@ class LandingPage extends React.Component {
           <div className='container'>
             <div className='row'>
               <div className='col-lg-4'>
+              <Link to='/exam' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
                 <div className='card'>
                   <img
                     className='card-img-top'
                     src={require('../img/sbi.jpg')}
                     alt='Card image cap'
                   />
-                  <div classNames='card-body'>
-                    <Link to='/exam' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
+                  <div classNames='card-body'>     
                       <h5 className='card-title'> SBI PO</h5>
                       <p className='card-text'>
                         Study Materials, Mock Tests, Live tests and much more..
                       </p>
                       <br />
-                    </Link>
                   </div>
                 </div>
+                </Link>
               </div>
 
               <div className='col-lg-4'>
+              <Link to='/FEDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>                
                 <div className='card'>
                   <br />
                   <br /> <br /> <br />
@@ -99,8 +100,7 @@ class LandingPage extends React.Component {
                     alt='Card image cap'
                   />
                   <div classNames='card-body'>
-                    <Link to='/FEDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
-                      <h5 className='card-title'>
+                       <h5 className='card-title'>
                         <br />
                         <br /> <br /> <br />
                         <br />
@@ -111,12 +111,13 @@ class LandingPage extends React.Component {
                         Study Materials, Mock Tests, Live tests and much more..
                         <br />
                         <br />
-                      </p>
-                    </Link>
+                      </p>                    
                   </div>
                 </div>
+                </Link>
               </div>
               <div className='col-lg-4'>
+              <Link to='/INDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>                   
                 <div className='card'>
                   <br /> <br />
                   <img
@@ -125,17 +126,17 @@ class LandingPage extends React.Component {
                     alt='Card image cap'
                   />
                   <div classNames='card-body'>
-                    <Link to='/INDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
-                      <br /> <br /> <br /> <br /> <br />
+                       <br /> <br /> <br /> <br /> <br />
                       <h5 className='card-title'>Indian Bank PO</h5>
                       <p className='card-text'>
                         Study Materials, Mock Tests, Live tests and much more..
                       </p>
                       <br />
-                    </Link>
+                    
                   </div>
                 </div>
-              </div>
+                </Link>
+              </div>              
             </div>
           </div>
         </section>

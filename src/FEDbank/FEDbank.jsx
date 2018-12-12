@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import 'owl.carousel2/dist/assets/owl.carousel.css'
+import $ from 'jquery'
+import 'owl.carousel'
 
 import { userActions } from '../_actions'
 import '../css/ExamPage.css'
@@ -8,6 +11,33 @@ import '../css/ExamPage.css'
 class FEDbank extends React.Component {
   componentDidMount () {
     this.props.dispatch(userActions.getAll())
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        
+        autoHeight:true,
+        margin:20,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        loop:true,
+        dots:false,
+        nav:true,
+        navText : ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"]
+      }
+      );
+    });
+    var owl = $('.owl-carousel');
+
+// Go to the next item
+$('.customNextBtn').click(function() {
+    owl.trigger('next.owl.carousel');
+})
+// Go to the previous item
+$('.customPrevBtn').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl.trigger('prev.owl.carousel', [300]);
+})
   }
 
   render () {
@@ -15,8 +45,8 @@ class FEDbank extends React.Component {
     return (
       <div>
         <nav aria-label='breadcrumb'>
-          <ol className='breadcrumb'>
-            <li className='breadcrumb-item'>
+          <ol class='breadcrumb'>
+            <li class='breadcrumb-item'>
               <Link
                 to='/land'
                 style={{ 'text-decoration': 'none', color: 'black' }}
@@ -24,7 +54,7 @@ class FEDbank extends React.Component {
                 Home
               </Link>
             </li>
-            <li className='breadcrumb-item'>
+            <li class='breadcrumb-item'>
               <Link
                 to='/land'
                 style={{ 'text-decoration': 'none', color: 'black' }}
@@ -32,27 +62,27 @@ class FEDbank extends React.Component {
                 Exams
               </Link>
             </li>
-            <li className='breadcrumb-item active' aria-current='page'>
+            <li class='breadcrumb-item active' aria-current='page'>
               Federal Bank PO
             </li>
           </ol>
         </nav>
         <nav
-          classNameName='navbar navbar-light bg-light static-top'
+          className='navbar navbar-light bg-light static-top'
           style={{
             'border-top-right-radius': '10px',
             'border-top-left-radius': '10px'
           }}
         >
-          <div classNameName='container'>
-            <a classNameName='navbar-brand' href='#'>
+          <div className='container'>
+            <a className='navbar-brand' href='#'>
               {' '}
               <Link
                 style={{ 'text-decoration': 'none', color: 'black' }}
                 to='/land'
               >
                 <h4>
-                  <i className='fas fa-book-reader mr-2' />
+                  <i class='fas fa-book-reader mr-2' />
                   Exam-Adda
                 </h4>
               </Link>
@@ -60,12 +90,12 @@ class FEDbank extends React.Component {
           </div>
         </nav>
 
-        <header classNameName='masthead text-white text-center'>
-          <div classNameName='overlay' />
-          <div classNameName='container'>
-            <div classNameName='row'>
-              <div classNameName='col-xl-9 mx-auto'>
-                <h1 classNameName='mb-5'>Federal Bank PO</h1>
+        <header className='masthead text-white text-center'>
+          <div className='overlay' />
+          <div className='container'>
+            <div className='row'>
+              <div className='col-xl-9 mx-auto'>
+                <h1 className='mb-5'>Federal Bank PO</h1>
                 <h5>
                   Federal Bank PO 2018 Exam is a wonderful opportunity for you
                   to turn your dreams into reality! Get all information about
@@ -74,18 +104,18 @@ class FEDbank extends React.Component {
                   Kickstart your preparation with Online Test Series now!
                 </h5>
               </div>
-              <div classNameName='col-md-10 col-lg-8 col-xl-7 mx-auto'>
+              <div className='col-md-10 col-lg-8 col-xl-7 mx-auto'>
                 <form>
-                  <div classNameName='form-row'>
-                    <div classNameName='col-12'>
+                  <div className='form-row'>
+                    <div className='col-12'>
                       <Link
-                        classNameName='x'
+                        className='x'
                         to='/login'
                         style={{ 'text-decoration': 'none' }}
                       >
                         <button
                           type='submit'
-                          classNameName='btn btn-block btn-lg btn-success mt-3'
+                          className='btn btn-block btn-lg btn-success mt-3'
                         >
                           Sign up!
                         </button>
@@ -98,21 +128,21 @@ class FEDbank extends React.Component {
           </div>
         </header>
 
-        <div className='container'>
-          <div className='row'>
-            <div className='col-sm' id='TestCard'>
-              <div classNameName='card mb-4'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-sm' id='TestCard'>
+              <div className='card mb-4'>
                 <br />
                 <img
-                  classNameName='card-img-top'
+                  className='card-img-top'
                   src={require('../img/fb.png')}
                   alt='Card image cap'
                 />
-                <div classNameName='card-body'>
-                  <h5 classNameName='card-title'>
+                <div className='card-body'>
+                  <h5 className='card-title'>
                     Federal Bank PO - Memory Based Paper
                   </h5>
-                  <p classNameName='card-text'>
+                  <p className='card-text'>
                     <b>150</b> QUESTIONS
                     <hr />
                     <b>150</b> MARKS
@@ -123,67 +153,67 @@ class FEDbank extends React.Component {
 
                   <a
                     href='http://localhost:8080/genINST'
-                    classNameName='btn btn-primary btn btn-block'
+                    className='btn btn-primary btn btn-block'
                   >
                     Start Now
                   </a>
                 </div>
               </div>
             </div>
-            <div className='col-sm' />
-            <div className='col-sm' />
+            <div class='col-sm' />
+            <div class='col-sm' />
           </div>
         </div>
 
         <div
-          className='jumbotron jumbotron-fluid'
+          class='jumbotron jumbotron-fluid'
           style={{ 'border-radius': '10px' }}
         >
-          <div className='container'>
+          <div class='container'>
             <h1>
               <center id='Price'>One Pass. All Exams. Unlimited Tests</center>
             </h1>
-            <div className='row'>
-              <div className='col-sm'>
-                <div classNameName='card'>
-                  <div classNameName='card-body'>
-                    <h3 classNameName='card-title text-center'>YEARLY PRICE</h3>
-                    <p classNameName='card-text'>
+            <div class='row'>
+              <div class='col-sm'>
+                <div className='card'>
+                  <div className='card-body'>
+                    <h3 className='card-title text-center'>YEARLY PRICE</h3>
+                    <p className='card-text'>
                       <center>
                         <b>₹599</b> for 12 months
                       </center>
                     </p>
-                    <a href='#' classNameName='btn btn-success btn btn-block'>
+                    <a href='#' className='btn btn-success btn btn-block'>
                       BUY PASS
                     </a>
                   </div>
                 </div>
               </div>
-              <div className='col-sm'>
-                <div classNameName='card'>
-                  <div classNameName='card-body'>
-                    <h3 classNameName='card-title text-center'>4 MONTHS PRICE</h3>
-                    <p classNameName='card-text'>
+              <div class='col-sm'>
+                <div className='card'>
+                  <div className='card-body'>
+                    <h3 className='card-title text-center'>4 MONTHS PRICE</h3>
+                    <p className='card-text'>
                       <center>
                         <b>₹400</b> for 4 months
                       </center>
                     </p>
-                    <a href='#' classNameName='btn btn-danger btn btn-block'>
+                    <a href='#' className='btn btn-danger btn btn-block'>
                       BUY PASS
                     </a>
                   </div>
                 </div>
               </div>
-              <div className='col-sm'>
-                <div classNameName='card'>
-                  <div classNameName='card-body'>
-                    <h3 classNameName='card-title text-center'>2 MONTHS PRICE</h3>
-                    <p classNameName='card-text'>
+              <div class='col-sm'>
+                <div className='card'>
+                  <div className='card-body'>
+                    <h3 className='card-title text-center'>2 MONTHS PRICE</h3>
+                    <p className='card-text'>
                       <center>
                         <b>₹200</b> for 2 months
                       </center>
                     </p>
-                    <a href='#' classNameName='btn btn-warning btn btn-block'>
+                    <a href='#' className='btn btn-warning btn btn-block'>
                       BUY PASS
                     </a>
                   </div>
@@ -208,7 +238,7 @@ class FEDbank extends React.Component {
           <center>
             <h2>Federal Bank PO 2018 Exam Pattern</h2>
           </center>
-          <table className='table table-bordered'>
+          <table class='table table-bordered'>
             <thead>
               <tr>
                 <th scope='col'>Section</th>
@@ -311,6 +341,23 @@ class FEDbank extends React.Component {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
+
+              <div className='col-xl-12 mx-auto'>
+        
+        <div className="owl-carousel owl-theme mb-3">
+     
+     <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+     <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+     <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+     <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+     <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+     <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+     <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+     </div>
+     <i class="fas fa-chevron-left customPrevBtn" style={{'position': 'absolute',  'top': '50%', 'margin-top': '-10px','left': '0'}}></i>
+     <i class="fas fa-chevron-right customNextBtn"style={{'position': 'absolute',  'top': '50%', 'margin-top': '-10px','right': '0'}}></i>
+   </div>
+  
         </container>
       </div>
     )

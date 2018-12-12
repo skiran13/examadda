@@ -10,22 +10,33 @@ class ExamPage extends React.Component {
   componentDidMount () {
     this.props.dispatch(userActions.getAll())
 
-    $(document).ready(function () {
-      $('.owl-carousel').owlCarousel({
-        autoHeight: true,
-        margin: 20,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: [
-          "<i class='fa fa-chevron-left'></i>",
-          "<i class='fa fa-chevron-right'></i>"
-        ]
-      })
-    })
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        
+        autoHeight:true,
+        margin:20,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        loop:true,
+        dots:false,
+        nav:true,
+        navText : ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"]
+      }
+      );
+    });
+    var owl = $('.owl-carousel');
+
+// Go to the next item
+$('.customNextBtn').click(function() {
+    owl.trigger('next.owl.carousel');
+})
+// Go to the previous item
+$('.customPrevBtn').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl.trigger('prev.owl.carousel', [300]);
+})
   }
 
   render () {
@@ -307,50 +318,25 @@ class ExamPage extends React.Component {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
-          <div className='owl-carousel owl-theme '>
-            <div id='owl-padding'>
-              <Link to='/FEDbank'>
-                {' '}
-                <img src={require('../img/fb.png')} />{' '}
-              </Link>
-            </div>
-            <div id='owl-padding'>
-              <Link to='/FEDbank'>
-                {' '}
-                <img src={require('../img/fb.png')} />{' '}
-              </Link>
-            </div>
-            <div id='owl-padding'>
-              <Link to='/FEDbank'>
-                {' '}
-                <img src={require('../img/fb.png')} />{' '}
-              </Link>
-            </div>
-            <div id='owl-padding'>
-              <Link to='/FEDbank'>
-                {' '}
-                <img src={require('../img/fb.png')} />{' '}
-              </Link>
-            </div>
-            <div id='owl-padding'>
-              <Link to='/FEDbank'>
-                {' '}
-                <img src={require('../img/fb.png')} />{' '}
-              </Link>
-            </div>
-            <div id='owl-padding'>
-              <Link to='/FEDbank'>
-                {' '}
-                <img src={require('../img/fb.png')} />{' '}
-              </Link>
-            </div>
-            <div id='owl-padding'>
-              <Link to='/FEDbank'>
-                {' '}
-                <img src={require('../img/fb.png')} />{' '}
-              </Link>
-            </div>
-          </div>
+         
+      <div className='col-xl-12 mx-auto'>
+        
+      <div className="owl-carousel owl-theme mb-3">
+   
+   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+   <div id='owl-padding'><Link to="/FEDbank"> <img src={require('../img/fb.png')}/> </Link></div>
+   </div>
+   <i class="fas fa-chevron-left customPrevBtn" style={{'position': 'absolute',  'top': '50%', 'margin-top': '-10px','left': '0'}}></i>
+   <i class="fas fa-chevron-right customNextBtn"style={{'position': 'absolute',  'top': '50%', 'margin-top': '-10px','right': '0'}}></i>
+ </div>
+
+ 
+
         </container>
       </div>
     )
