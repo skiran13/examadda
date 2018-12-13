@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { userActions } from '../_actions'
 
-class genINST extends React.Component {
+class indianInst extends React.Component {
   componentDidMount () {
     this.props.dispatch(userActions.getAll())
   }
@@ -176,7 +176,7 @@ class genINST extends React.Component {
 
         <div className='col-md-9 show_before_exam_start'>
           <a
-            href='http://localhost:8080/exam'
+            href='http://localhost:8080/INDbank'
             type='button'
             className='btn btn-primary btn-lg float-left'
           >
@@ -210,5 +210,5 @@ function mapStateToProps (state) {
   }
 }
 
-const connectedgenINST = connect(mapStateToProps)(genINST)
-export { connectedgenINST as genINST }
+const connectedindianInst = connect(mapStateToProps)(indianInst)
+export { connectedindianInst as indianInst }

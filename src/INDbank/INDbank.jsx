@@ -151,7 +151,7 @@ $('.customPrevBtn').click(function() {
                   </p>
 
                   <a
-                    href='http://localhost:8080/genINST'
+                    href='http://localhost:8080/indianInst'
                     className='btn btn-primary btn btn-block'
                   >
                     Start Now
