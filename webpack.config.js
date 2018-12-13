@@ -47,7 +47,7 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'mongodb://skiran13:skiran13@ds127888.mlab.com:27888/internmodel'
+            apiUrl: 'http://localhost:4000'
         })
     }
 }
