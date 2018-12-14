@@ -11,10 +11,12 @@ class Tests extends React.Component {
   render () {
     const { user, users } = this.props
     return (
-      <div className='jumbotron' style={{ 'background-color': '#dcdee0' }}>
-        <div class='row'>
-          <div class='col-sm-3'>
-            
+      <div>
+        <br /> <br />
+        <h1>Tests</h1>
+        <div className='jumbotron' style={{ 'background-color': '#dcdee0' }}>
+          <div class='row'>
+            <div class='col-sm-3'>
               <div className='card mb-4' style={{ 'border-radius': '10px' }}>
                 <img
                   className='card-img-top'
@@ -37,20 +39,19 @@ class Tests extends React.Component {
                   </p>
 
                   <a
-                    href='http://localhost:8080/genINST'
+                    href='http://localhost:8080/genInst1'
                     className='btn btn-primary btn btn-block'
                   >
                     Start Now
                   </a>
                 </div>
               </div>
-            
-            <div className='col-sm' />
-            <div className='col-sm' />
-          </div>
-          <div class='col-sm-3'>
-            
-              <div className='card mb-4'style={{ 'border-radius': '10px' }}>
+
+              <div className='col-sm' />
+              <div className='col-sm' />
+            </div>
+            <div class='col-sm-3'>
+              <div className='card mb-4' style={{ 'border-radius': '10px' }}>
                 <br />
                 <br />
                 <br />
@@ -76,20 +77,19 @@ class Tests extends React.Component {
                   </p>
 
                   <a
-                    href='http://localhost:8080/genINST'
+                    href='http://localhost:8080/fedInst1'
                     className='btn btn-primary btn btn-block'
                   >
                     Start Now
                   </a>
                 </div>
               </div>
-            
-            <div class='col-sm' />
-            <div class='col-sm' />
-          </div>
-          <div class='col-sm-3'>
-            
-              <div className='card mb-4'style={{ 'border-radius': '10px' }}>
+
+              <div class='col-sm' />
+              <div class='col-sm' />
+            </div>
+            <div class='col-sm-3'>
+              <div className='card mb-4' style={{ 'border-radius': '10px' }}>
                 <br />
 
                 <br />
@@ -115,16 +115,17 @@ class Tests extends React.Component {
                   </p>
 
                   <a
-                    href='http://localhost:8080/genINST'
+                    href='http://localhost:8080/indianInst1'
                     className='btn btn-primary btn btn-block'
                   >
                     Start Now
                   </a>
                 </div>
               </div>
-            
-            <div className='col-sm' />
-            <div className='col-sm' />
+
+              <div className='col-sm' />
+              <div className='col-sm' />
+            </div>
           </div>
         </div>
       </div>
