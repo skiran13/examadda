@@ -62,7 +62,7 @@ class NewTest extends React.Component {
     
     <div class="row">
     <div class="col">
-    <button type="button" class="btn btn-warning mt-4 block">Next</button>
+    <button type="button" class="btn btn-warning mt-4 block">Prev</button>
     </div>
     <div class="col">
     <button type="button" class="btn btn-success mt-4 block">Next</button>
