@@ -15,6 +15,8 @@ import { INDbank } from '../INDbank'
 import { genINST } from '../genINST'
 import { Tests } from '../Tests'
 import { ProfilePage } from '../ProfilePage'
+import { NewTest } from '../NewTest'
+
 
 
 class App extends React.Component {
@@ -234,6 +236,8 @@ class App extends React.Component {
                   <Route path='/genINST' component={genINST} />
                   <Route path='/profile' component={ProfilePage} />
                   <Route path='/test' component={Tests} />
+                  <Route path='/newtest' component={NewTest} />
+
                 </div>
               </BrowserRouter>
             </div>
