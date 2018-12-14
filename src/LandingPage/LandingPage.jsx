@@ -9,6 +9,8 @@ class LandingPage extends React.Component {
 
   componentDidMount () {
     this.props.dispatch(userActions.getAll())
+
+    
   }
   
 
@@ -26,6 +28,8 @@ class LandingPage extends React.Component {
             </a>
           </div>
         </nav>
+
+        	
 
         <header className='masthead text-white text-center'>
           <div className='overlay' />

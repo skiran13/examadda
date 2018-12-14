@@ -14,6 +14,7 @@ import { FEDbank } from '../FEDbank'
 import { INDbank } from '../INDbank'
 import { genINST } from '../genINST'
 import { Tests } from '../Tests'
+import {NewTest} from '../NewTest'
 import { ProfilePage } from '../ProfilePage'
 import { fedInst } from '../fedInst'
 import { indianInst } from '../indianInst'
@@ -239,6 +240,7 @@ class App extends React.Component {
                   <Route path='/genINST' component={genINST} />
                   <Route path='/profile' component={ProfilePage} />
                   <Route path='/test' component={Tests} />
+                  <Route path='/newtest' component={NewTest} />
                   <Route path='/fedInst' component={fedInst} />
                   <Route path='/indianInst' component={indianInst} />
                   <Route path='/genInst1' component={genInst1} />
