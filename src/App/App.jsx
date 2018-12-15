@@ -22,6 +22,7 @@ import { genInst1 } from '../genInst1'
 import { fedInst1 } from '../fedInst1'
 import { indianInst1 } from '../indianInst1'
 import {ViewQuestion} from '../ViewQuestion'
+import { addQuestion } from '../addQuestion'
 
 class App extends React.Component {
   constructor (props) {
@@ -247,6 +248,7 @@ class App extends React.Component {
                   <Route path='/fedInst1' component={fedInst1} />
                   <Route path='/indianInst1' component={indianInst1} />
                   <Route path='/viewquestion' component={ViewQuestion} />
+                  <Route path='/addQuestion' component={addQuestion} />
 
                 </div>
               </BrowserRouter>
