@@ -14,7 +14,7 @@ import { FEDbank } from '../FEDbank'
 import { INDbank } from '../INDbank'
 import { genINST } from '../genINST'
 import { Tests } from '../Tests'
-import {NewTest} from '../NewTest'
+import { NewTest } from '../NewTest'
 import { ProfilePage } from '../ProfilePage'
 import { fedInst } from '../fedInst'
 import { indianInst } from '../indianInst'
@@ -22,6 +22,8 @@ import { genInst1 } from '../genInst1'
 import { fedInst1 } from '../fedInst1'
 import { indianInst1 } from '../indianInst1'
 import { addQuestion } from '../addQuestion'
+import { addExam } from '../addExam'
+import { deleteExam } from '../deleteExam'
 
 class App extends React.Component {
   constructor (props) {
@@ -247,7 +249,8 @@ class App extends React.Component {
                   <Route path='/fedInst1' component={fedInst1} />
                   <Route path='/indianInst1' component={indianInst1} />
                   <Route path='/addQuestion' component={addQuestion} />
-
+                  <Route path='/addExam' component={addExam} />
+                  <Route path='/deleteExam' component={deleteExam} />{' '}
                 </div>
               </BrowserRouter>
             </div>
