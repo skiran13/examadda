@@ -2,13 +2,47 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { userActions } from '../_actions'
+import config from 'config';
 
 class addQuestion extends React.Component {
+constructor(props){
+  super(props);
+  this.state={
+      examcode:'',
+      title:'',
+      image:'',
+      option1:'',
+      option2:'',
+      option3:'',
+      option4:'',
+      correct:''    
+      
+  }
+  this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleChange = this.handleChange.bind(this);
+} 
+ 
   commentDidMount () {
     this.props.dispatch(userActions.getAll())
   }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+}
+
+  handleSubmit(e){
+    e.preventDefault();
+const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.state)
+    }
+    fetch(`${config.apiUrl}/admin/addquestion`, requestOptions).then(handleResponse);
+  }
+
   render () {
     const { user, users } = this.props
+    const { examcode,title,image,option1,option2,option3,option4,correct} = this.state
     return (
       <div className='container' id='wrap'>
         <div className='header clearfix'>
@@ -51,7 +85,7 @@ class addQuestion extends React.Component {
           <br />
         </div>
         <div className='content'>
-          <form action='/admin/addquestion' method='POST' role='form'>
+          <form onSubmit={this.handleSubmit} role='form'>
             <div className='form-group'>
               <label for='title'>For exam:</label>
               <input
@@ -59,7 +93,9 @@ class addQuestion extends React.Component {
                 name='examcode'
                 type='text'
                 placeholder='examcode'
+                value={examcode}
                 required='true'
+                onChange={this.handleChange}
               />
               <label for='title'>Title:</label>
 
@@ -68,7 +104,9 @@ class addQuestion extends React.Component {
                 name='title'
                 type='text'
                 placeholder='question tile'
+                value={title}
                 required='true'
+                onChange={this.handleChange}
               />
               <label for='image'>Image(optional):</label>
 
@@ -76,7 +114,9 @@ class addQuestion extends React.Component {
                 className='form-control'
                 name='image'
                 type='text'
+                value={image}
                 placeholder='url'
+                onChange={this.handleChange}
               />
               <label for='option1'>Option 1:</label>
 
@@ -86,6 +126,8 @@ class addQuestion extends React.Component {
                 type='text'
                 placeholder=''
                 required='true'
+                value={option1}
+                onChange={this.handleChange}
               />
               <label for='option2'>Option 2:</label>
 
@@ -94,7 +136,9 @@ class addQuestion extends React.Component {
                 name='option2'
                 type='text'
                 placeholder=''
+                value={option2}
                 required='true'
+                onChange={this.handleChange}
               />
               <label for='option3'>Option 3:</label>
 
@@ -104,6 +148,8 @@ class addQuestion extends React.Component {
                 type='text'
                 placeholder=''
                 required='true'
+                value={option3}
+                onChange={this.handleChange}
               />
               <label for='option4'>Option 4:</label>
 
@@ -113,6 +159,8 @@ class addQuestion extends React.Component {
                 type='text'
                 placeholder=''
                 required='true'
+                value={option4}
+                onChange={this.handleChange}
               />
               <label for='correct'>Correct Option:</label>
 
@@ -121,10 +169,12 @@ class addQuestion extends React.Component {
                 name='correct'
                 type='number'
                 placeholder='1/2/3/4'
+                value={correct}
+                onChange={this.handleChange}
               />
             </div>
             <br />
-            <button className='btn btn-primary float-right' type='submit'>
+            <button className='btn btn-primary float-right' type='submit' >
               Submit{' '}
             </button>
             <br />

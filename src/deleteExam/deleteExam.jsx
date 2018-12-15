@@ -2,13 +2,39 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { userActions } from '../_actions'
+import config from 'config';
 
 class deleteExam extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+        examcode:'' 
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
   commentDidMount () {
     this.props.dispatch(userActions.getAll())
   }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+}
+
+  handleSubmit(e){
+    e.preventDefault();
+const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.state)
+    }
+    fetch(`${config.apiUrl}/admin/deleteexam`, requestOptions);
+  }
+
+
   render () {
     const { user, users } = this.props
+    const { examcode} = this.state
     return (
       <div className='container' id='wrap'>
         <div className='header clearfix'>
@@ -43,7 +69,7 @@ class deleteExam extends React.Component {
           <br />
         </div>
         <div className='content'>
-          <form action='/admin/addquestion' method='POST' role='form'>
+          <form onSubmit={this.handleSubmit} role='form'>
             <div className='form-group'>
               <label for='title'>Exam Code</label>
               <br />
@@ -53,11 +79,13 @@ class deleteExam extends React.Component {
                 type='text'
                 placeholder='examcode'
                 required='true'
+                value={examcode}
+                onChange={this.handleChange}
               />
             </div>
             <br />
             <button className='btn btn-primary float-right' type='submit'>
-              Submit{' '}
+              Submit
             </button>
             <br />
           </form>

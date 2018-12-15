@@ -2,13 +2,41 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { userActions } from '../_actions'
+import config from 'config';
 
 class addExam extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+        examcode:'',
+        title:''  
+        
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
   commentDidMount () {
     this.props.dispatch(userActions.getAll())
   }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+}
+
+  handleSubmit(e){
+    e.preventDefault();
+const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.state)
+    }
+    fetch(`${config.apiUrl}/admin/addexam`, requestOptions);
+  }
+
   render () {
     const { user, users } = this.props
+    const { examcode,title} = this.state
     return (
       <div className='container' id='wrap'>
         <div className='header clearfix'>
@@ -29,7 +57,7 @@ class addExam extends React.Component {
           Online-Objective-Examination-System
         </h2>
         <div className='page-header'>
-          <h3>
+          <h3> 
             Enter Exam Details
             <br />
           </h3>
@@ -43,7 +71,7 @@ class addExam extends React.Component {
           <br />
         </div>
         <div className='content'>
-          <form action='/admin/addquestion' method='POST' role='form'>
+          <form onSubmit={this.handleSubmit} role='form'>
             <div className='form-group'>
               <label for='title'>Exam Code</label>
               <br />
@@ -53,6 +81,8 @@ class addExam extends React.Component {
                 type='text'
                 placeholder='examcode'
                 required='true'
+                value={examcode}
+                onChange={this.handleChange}
               />
               <label for='title'>
                 <br />
@@ -65,6 +95,8 @@ class addExam extends React.Component {
                 type='text'
                 placeholder='exam tile'
                 required='true'
+                value={title}
+                onChange={this.handleChange}
               />
             </div>
             <br />
