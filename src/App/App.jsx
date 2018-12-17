@@ -65,7 +65,7 @@ class App extends React.Component {
       <div>
         <div>
           <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
-            <a className='navbar-brand' href='http://localhost:8080/land'>
+            <a className='navbar-brand' href='/'>
               <i className='fas fa-book-reader mr-2' />
               Exam-Adda
             </a>
@@ -105,14 +105,14 @@ class App extends React.Component {
             >
               <ul className='navbar-nav ml-auto'>
                 <li className='nav-item'>
-                  <a className='nav-link' href='http://localhost:8080/land'>
+                  <a className='nav-link' href='/'>
                     Home
                   </a>
                 </li>
                 <li className='nav-item dropdown'>
                   <a
                     className='nav-link dropdown-toggle'
-                    href='http://localhost:8080/exam'
+                    
                     id='navbarDropdown'
                     role='button'
                     data-toggle='dropdown'
@@ -127,31 +127,74 @@ class App extends React.Component {
                   >
                     <a
                       className='dropdown-item'
-                      href='http://localhost:8080/exam'
+                      href='/exam'
                     >
                       SBI PO
                     </a>
                     <a
                       className='dropdown-item'
-                      href='http://localhost:8080/FEDbank'
+                      href='/FEDbank'
                     >
                       Federal Bank PO
                     </a>
                     <a
                       className='dropdown-item'
-                      href='http://localhost:8080/INDbank'
+                      href='/INDbank'
                     >
                       Indian Bank
                     </a>
                   </div>
                 </li>
+                {(user && user.isAdmin)?(<li className='nav-item dropdown'>
+                  <a
+                    className='nav-link dropdown-toggle'
+                    
+                    id='navbarDropdown'
+                    role='button'
+                    data-toggle='dropdown'
+                    aria-haspopup='true'
+                    aria-expanded='false'
+                  >
+                    Add
+                  </a>
+                  <div
+                    className='dropdown-menu hide'
+                    aria-labelledby='navbarDropdown'
+                  >
+                    <a
+                      className='dropdown-item'
+                      href='/addexam'
+                    >
+                      Add Exam
+                    </a>
+                    <a
+                      className='dropdown-item'
+                      href='/addquestion'
+                    >
+                      Add Question
+                    </a>
+                    <a
+                      className='dropdown-item'
+                      href='/viewexam'
+                    >
+                      View Exam
+                    </a>
+                    <a
+                      className='dropdown-item'
+                      href='/viewquestion'
+                    >
+                      View Question
+                    </a>
+                  </div>
+                </li>):null}
+                
                 <li className='nav-item'>
-                  <a className='nav-link' href='http://localhost:8080/test'>
+                  <a className='nav-link' href='/test'>
                     Tests
                   </a>
                 </li>
                 <li className='nav-item'>
-                  <a className='nav-link ' href='http://localhost:8080/forum'>
+                  <a className='nav-link ' href='/forum'>
                     Forum
                   </a>
                 </li>
@@ -161,13 +204,13 @@ class App extends React.Component {
                     <li className='nav-item'>
                       <a
                         className='nav-link active'
-                        href='http://localhost:8080/login'
+                        href='/login'
                       >
                         Login
                       </a>
                     </li>
                     <li className='nav-item'>
-                      <a href='http://localhost:8080/register'>
+                      <a href='/register'>
                         <button type='button' className='btn btn-outline-light'>
                           Signup
                         </button>
@@ -178,7 +221,7 @@ class App extends React.Component {
                   <li className='nav-item'>
                     <div className='btn-group nav-link py-0 mt-1'>
                       <a
-                        href='http://localhost:8080/'
+                        href='/'
                         role='button'
                         className='btn btn-sm btn-outline-light'
                       >
@@ -198,13 +241,13 @@ class App extends React.Component {
                       <div className='dropdown-menu dropdown-menu-right'>
                         <a
                           className='dropdown-item'
-                          href='http://localhost:8080/profile'
+                          href='/profile'
                         >
                           Profile
                         </a>
                         <a
                           className='dropdown-item'
-                          href='http://localhost:8080/land'
+                          href='/'
                         >
                           Dashboard
                         </a>
@@ -213,7 +256,7 @@ class App extends React.Component {
                           onClick={e => {
                             this.props.dispatch(userActions.logout())
                           }}
-                          href='http://localhost:8080/'
+                          href='/'
                         >
                           Logout
                         </a>
