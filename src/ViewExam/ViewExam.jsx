@@ -9,7 +9,8 @@ class ViewExam extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      body:''
+      body:'',
+      show: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     
@@ -23,28 +24,30 @@ class ViewExam extends React.Component {
         console.log('hello')
         fetch(`${config.apiUrl}/admin/api/viewexam`)
         .then(response => response.json())
-        .then(body => this.setState({body: body}));
+        .then(body => this.setState({body: body , show:true}));
 
     }
 
 
   render () {
+    
     return (
-      <div className='jumbotron'>
+      <div className='jumbotron mt-5'>
+      <h2 style={{'textAlign':'center'}}>Show Available Exams</h2>
       <form role='form' onSubmit={this.handleSubmit}>
-      <button type="submit" class="btn btn-primary" >Primary</button>
+      <button type="submit" class="btn btn-success block mt-3" >Show exams</button>
       </form>
       <div className="container mt-5">
       <table
-          className='table table-bordered'
-          style={{ 'background-color': '#0000002e' }}
+          className='table table-bordered table-striped'
+          style={{ 'border-radius': '5px' }}
         >
-          <thead className='thead-dark'>
+          {(this.state.show)?(<thead>
             <tr>
               <th scope='col'>Name of exam</th>
               <th scope='col'>Code</th>
             </tr>
-          </thead>
+          </thead>): null}
           <tbody>
           {  Object.keys(this.state.body).map(key => ( 
            
