@@ -49,7 +49,7 @@ class FEDbank extends React.Component {
           <ol class='breadcrumb'>
             <li class='breadcrumb-item'>
               <Link
-                to='/land'
+                to='/'
                 style={{ 'text-decoration': 'none', color: 'black' }}
               >
                 Home
@@ -57,7 +57,7 @@ class FEDbank extends React.Component {
             </li>
             <li class='breadcrumb-item'>
               <Link
-                to='/land'
+                to='/'
                 style={{ 'text-decoration': 'none', color: 'black' }}
               >
                 Exams
@@ -80,7 +80,7 @@ class FEDbank extends React.Component {
               {' '}
               <Link
                 style={{ 'text-decoration': 'none', color: 'black' }}
-                to='/land'
+                to='/'
               >
                 <h4>
                   <i class='fas fa-book-reader mr-2' />

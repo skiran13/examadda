@@ -41,7 +41,7 @@ class LandingPage extends React.Component {
                   India
                 </h1>
                 <h5>
-                  Boost your exam preparation with Testbook to crack the most
+                  Boost your exam preparation with Exam Adda to crack the most
                   popular competitive exams in India. Select your course and get
                   started.
                 </h5>

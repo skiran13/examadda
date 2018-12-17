@@ -75,7 +75,7 @@ class addQuestion extends React.Component {
                 className='form-control'
                 name='examcode'
                 type='text'
-                placeholder='examcode'
+                placeholder='Exam Code'
                 value={examcode}
                 required='true'
                 onChange={this.handleChange}
@@ -86,7 +86,7 @@ class addQuestion extends React.Component {
                 className='form-control'
                 name='title'
                 type='text'
-                placeholder='question tile'
+                placeholder='Enter the Question'
                 value={title}
                 required='true'
                 onChange={this.handleChange}
@@ -98,7 +98,7 @@ class addQuestion extends React.Component {
                 name='image'
                 type='text'
                 value={image}
-                placeholder='url'
+                placeholder='Image url'
                 onChange={this.handleChange}
               />
               <label for='option1'>Option 1:</label>
@@ -107,7 +107,7 @@ class addQuestion extends React.Component {
                 className='form-control'
                 name='option1'
                 type='text'
-                placeholder=''
+                placeholder='Option 1'
                 required='true'
                 value={option1}
                 onChange={this.handleChange}
@@ -118,7 +118,7 @@ class addQuestion extends React.Component {
                 className='form-control'
                 name='option2'
                 type='text'
-                placeholder=''
+                placeholder='Option 2'
                 value={option2}
                 required='true'
                 onChange={this.handleChange}
@@ -129,7 +129,7 @@ class addQuestion extends React.Component {
                 className='form-control'
                 name='option3'
                 type='text'
-                placeholder=''
+                placeholder='Option 3'
                 required='true'
                 value={option3}
                 onChange={this.handleChange}
@@ -140,7 +140,7 @@ class addQuestion extends React.Component {
                 className='form-control'
                 name='option4'
                 type='text'
-                placeholder=''
+                placeholder='Option 4'
                 required='true'
                 value={option4}
                 onChange={this.handleChange}
