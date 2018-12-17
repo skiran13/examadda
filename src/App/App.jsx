@@ -25,7 +25,7 @@ import { ViewQuestion } from '../ViewQuestion'
 import { addQuestion } from '../addQuestion'
 import { addExam } from '../addExam'
 import { deleteExam } from '../deleteExam'
-import {ViewExam} from '../ViewExam'
+import { ViewExam } from '../ViewExam'
 
 class App extends React.Component {
   constructor (props) {
@@ -92,7 +92,7 @@ class App extends React.Component {
                   style={{ width: '35vw' }}
                 />
                 <button
-                  className='btn btn-outline-light my-2 my-sm-0 dropdown-toggle removecaret '
+                  className='btn btn-outline-light my-2 my-sm-0 '
                   type='submit'
                   id='input'
                 >
@@ -113,7 +113,6 @@ class App extends React.Component {
                 <li className='nav-item dropdown'>
                   <a
                     className='nav-link dropdown-toggle'
-                    
                     id='navbarDropdown'
                     role='button'
                     data-toggle='dropdown'
@@ -126,69 +125,49 @@ class App extends React.Component {
                     className='dropdown-menu hide'
                     aria-labelledby='navbarDropdown'
                   >
-                    <a
-                      className='dropdown-item'
-                      href='/exam'
-                    >
+                    <a className='dropdown-item' href='/exam'>
                       SBI PO
                     </a>
-                    <a
-                      className='dropdown-item'
-                      href='/FEDbank'
-                    >
+                    <a className='dropdown-item' href='/FEDbank'>
                       Federal Bank PO
                     </a>
-                    <a
-                      className='dropdown-item'
-                      href='/INDbank'
-                    >
+                    <a className='dropdown-item' href='/INDbank'>
                       Indian Bank
                     </a>
                   </div>
                 </li>
-                {(user && user.isAdmin)?(<li className='nav-item dropdown'>
-                  <a
-                    className='nav-link dropdown-toggle'
-                    
-                    id='navbarDropdown'
-                    role='button'
-                    data-toggle='dropdown'
-                    aria-haspopup='true'
-                    aria-expanded='false'
-                  >
-                    Add
-                  </a>
-                  <div
-                    className='dropdown-menu hide'
-                    aria-labelledby='navbarDropdown'
-                  >
+                {user && user.isAdmin ? (
+                  <li className='nav-item dropdown'>
                     <a
-                      className='dropdown-item'
-                      href='/addexam'
+                      className='nav-link dropdown-toggle'
+                      id='navbarDropdown'
+                      role='button'
+                      data-toggle='dropdown'
+                      aria-haspopup='true'
+                      aria-expanded='false'
                     >
-                      Add Exam
+                      Add
                     </a>
-                    <a
-                      className='dropdown-item'
-                      href='/addquestion'
+                    <div
+                      className='dropdown-menu hide'
+                      aria-labelledby='navbarDropdown'
                     >
-                      Add Question
-                    </a>
-                    <a
-                      className='dropdown-item'
-                      href='/viewexam'
-                    >
-                      View Exam
-                    </a>
-                    <a
-                      className='dropdown-item'
-                      href='/viewquestion'
-                    >
-                      View Question
-                    </a>
-                  </div>
-                </li>):null}
-                
+                      <a className='dropdown-item' href='/addexam'>
+                        Add Exam
+                      </a>
+                      <a className='dropdown-item' href='/addquestion'>
+                        Add Question
+                      </a>
+                      <a className='dropdown-item' href='/viewexam'>
+                        View Exam
+                      </a>
+                      <a className='dropdown-item' href='/viewquestion'>
+                        View Question
+                      </a>
+                    </div>
+                  </li>
+                ) : null}
+
                 <li className='nav-item'>
                   <a className='nav-link' href='/test'>
                     Tests
@@ -203,10 +182,7 @@ class App extends React.Component {
                 {!isLoggedIn ? (
                   <div className='nav-item' style={{ display: '-webkit-box' }}>
                     <li className='nav-item'>
-                      <a
-                        className='nav-link active'
-                        href='/login'
-                      >
+                      <a className='nav-link active' href='/login'>
                         Login
                       </a>
                     </li>
@@ -240,16 +216,10 @@ class App extends React.Component {
                       </button>
 
                       <div className='dropdown-menu dropdown-menu-right'>
-                        <a
-                          className='dropdown-item'
-                          href='/profile'
-                        >
+                        <a className='dropdown-item' href='/profile'>
                           Profile
                         </a>
-                        <a
-                          className='dropdown-item'
-                          href='/'
-                        >
+                        <a className='dropdown-item' href='/'>
                           Dashboard
                         </a>
                         <a
@@ -298,7 +268,6 @@ class App extends React.Component {
                   <Route path='/addExam' component={addExam} />
                   <Route path='/deleteExam' component={deleteExam} />{' '}
                   <Route path='/viewexam' component={ViewExam} />
-
                 </div>
               </BrowserRouter>
             </div>
