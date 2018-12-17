@@ -5,34 +5,34 @@ import { userActions } from '../_actions'
 import config from 'config';
 
 class addQuestion extends React.Component {
-constructor(props){
-  super(props);
-  this.state={
-      examcode:'',
-      title:'',
-      image:'',
-      option1:'',
-      option2:'',
-      option3:'',
-      option4:'',
-      correct:''    
-      
+  constructor(props) {
+    super(props);
+    this.state = {
+      examcode: '',
+      title: '',
+      image: '',
+      option1: '',
+      option2: '',
+      option3: '',
+      option4: '',
+      correct: ''
+
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-  this.handleSubmit = this.handleSubmit.bind(this);
-  this.handleChange = this.handleChange.bind(this);
-} 
- 
-  commentDidMount () {
+
+  commentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-}
+  }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
-const requestOptions = {
+    const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.state)
@@ -40,9 +40,9 @@ const requestOptions = {
     fetch(`${config.apiUrl}/admin/addquestion`, requestOptions).then(handleResponse);
   }
 
-  render () {
+  render() {
     const { user, users } = this.props
-    const { examcode,title,image,option1,option2,option3,option4,correct} = this.state
+    const { examcode, title, image, option1, option2, option3, option4, correct } = this.state
     return (
       <div className='container' id='wrap'>
         <div className='header clearfix'>
@@ -188,7 +188,7 @@ const requestOptions = {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

@@ -25,6 +25,7 @@ import {ViewQuestion} from '../ViewQuestion'
 import { addQuestion } from '../addQuestion'
 import { addExam } from '../addExam'
 import { deleteExam } from '../deleteExam'
+import {ViewExam} from '../ViewExam'
 
 class App extends React.Component {
   constructor (props) {
@@ -253,6 +254,8 @@ class App extends React.Component {
                   <Route path='/addQuestion' component={addQuestion} />
                   <Route path='/addExam' component={addExam} />
                   <Route path='/deleteExam' component={deleteExam} />{' '}
+                  <Route path='/viewexam' component={ViewExam} />
+
                 </div>
               </BrowserRouter>
             </div>
