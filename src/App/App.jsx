@@ -21,7 +21,7 @@ import { indianInst } from '../indianInst'
 import { genInst1 } from '../genInst1'
 import { fedInst1 } from '../fedInst1'
 import { indianInst1 } from '../indianInst1'
-import {ViewQuestion} from '../ViewQuestion'
+import { ViewQuestion } from '../ViewQuestion'
 import { addQuestion } from '../addQuestion'
 import { addExam } from '../addExam'
 import { deleteExam } from '../deleteExam'
@@ -91,9 +91,9 @@ class App extends React.Component {
                   style={{ width: '35vw' }}
                 />
                 <button
-                  className='btn btn-outline-light my-2 my-sm-0'
+                  className='btn btn-outline-light my-2 my-sm-0 dropdown-toggle removecaret '
                   type='submit'
-                  id='myInput'
+                  id='input'
                 >
                   Search
                 </button>
