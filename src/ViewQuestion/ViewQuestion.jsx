@@ -70,7 +70,7 @@ const requestOptions = {
         <ul>
         {Object.keys(this.state.body[key].options).map(op => ( <li>{this.state.body[key].options[op].name}</li>))}
   </ul></li>
-))}</ol>
+))}</ol>  
     </div>
     </blockquote>
     

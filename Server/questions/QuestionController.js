@@ -41,7 +41,7 @@ var QuestionController = function(){
 
 
 
-	this.getQuestions = function(req, res){
+	this.getQuestions = function(req, res){console.log(req.body)
 		Question.find({ 'ofExam': req.body.examcode }, function(err, docs){
 			res.json(docs);
 		});

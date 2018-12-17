@@ -5,34 +5,34 @@ import { alertActions } from '../_actions'
 import config from 'config';
 
 class addQuestion extends React.Component {
-constructor(props){
-  super(props);
-  this.state={
-      examcode:'',
-      title:'',
-      image:'',
-      option1:'',
-      option2:'',
-      option3:'',
-      option4:'',
-      correct:''    
-      
+  constructor(props) {
+    super(props);
+    this.state = {
+      examcode: '',
+      title: '',
+      image: '',
+      option1: '',
+      option2: '',
+      option3: '',
+      option4: '',
+      correct: ''
+
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-  this.handleSubmit = this.handleSubmit.bind(this);
-  this.handleChange = this.handleChange.bind(this);
-} 
- 
-  commentDidMount () {
+
+  commentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-}
+  }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
-const requestOptions = {
+    const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.state)
@@ -45,7 +45,7 @@ const requestOptions = {
   render () {
     
     const { user, users } = this.props
-    const { examcode,title,image,option1,option2,option3,option4,correct} = this.state
+    const { examcode, title, image, option1, option2, option3, option4, correct } = this.state
     return (
       (user.isAdmin)?(
       <div className='jumbotron'>
@@ -75,7 +75,7 @@ const requestOptions = {
                 className='form-control'
                 name='examcode'
                 type='text'
-                placeholder='examcode'
+                placeholder='Exam Code'
                 value={examcode}
                 required='true'
                 onChange={this.handleChange}
@@ -86,7 +86,7 @@ const requestOptions = {
                 className='form-control'
                 name='title'
                 type='text'
-                placeholder='question tile'
+                placeholder='Enter the Question'
                 value={title}
                 required='true'
                 onChange={this.handleChange}
@@ -98,7 +98,7 @@ const requestOptions = {
                 name='image'
                 type='text'
                 value={image}
-                placeholder='url'
+                placeholder='Image url'
                 onChange={this.handleChange}
               />
               <label for='option1'>Option 1:</label>
@@ -107,7 +107,7 @@ const requestOptions = {
                 className='form-control'
                 name='option1'
                 type='text'
-                placeholder=''
+                placeholder='Option 1'
                 required='true'
                 value={option1}
                 onChange={this.handleChange}
@@ -118,7 +118,7 @@ const requestOptions = {
                 className='form-control'
                 name='option2'
                 type='text'
-                placeholder=''
+                placeholder='Option 2'
                 value={option2}
                 required='true'
                 onChange={this.handleChange}
@@ -129,7 +129,7 @@ const requestOptions = {
                 className='form-control'
                 name='option3'
                 type='text'
-                placeholder=''
+                placeholder='Option 3'
                 required='true'
                 value={option3}
                 onChange={this.handleChange}
@@ -140,7 +140,7 @@ const requestOptions = {
                 className='form-control'
                 name='option4'
                 type='text'
-                placeholder=''
+                placeholder='Option 4'
                 required='true'
                 value={option4}
                 onChange={this.handleChange}
@@ -174,7 +174,7 @@ const requestOptions = {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

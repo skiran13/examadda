@@ -49,7 +49,7 @@ $('.customPrevBtn').click(function() {
             <li className='breadcrumb-item'>
               <Link
                 style={{ 'text-decoration': 'none', color: 'black' }}
-                to='/land'
+                to='/'
               >
                 Home
               </Link>
@@ -79,7 +79,7 @@ $('.customPrevBtn').click(function() {
               {' '}
               <Link
                 style={{ 'text-decoration': 'none', color: 'black' }}
-                to='/land'
+                to='/'
               >
                 <h4>
                   <i className='fas fa-book-reader mr-2' />

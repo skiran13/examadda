@@ -31,32 +31,18 @@ class HomePage extends React.Component {
             <div className='row'>
               <div className='col-xl-9 mx-auto'>
                 <h1 className='mb-5'>
-                  Online Test Series & Free Mock Tests For Competitive Exams in
-                  India
+                  Welcome to Exam Adda!
                 </h1>
                 <h5>
-                  Boost your exam preparation with Testbook to crack the most
+                  Boost your exam preparation with Exam Adda to crack the most
                   popular competitive exams in India. Select your course and get
                   started.
                 </h5>
                 <br />
+               <h1>{user.firstName}</h1>
+                
               </div>
-              <div className='col-md-10 col-lg-8 col-xl-7 mx-auto'>
-                <form>
-                  <div className='form-row'>
-                    <div className='col-12'>
-                      <Link className='x' to='/register' style={{textDecoration: 'none'}}>
-                        <button
-                          type='submit'
-                          className='btn btn-block btn-lg btn-success'
-                        >
-                          Sign up!
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              
             </div>
           </div>
         </header>
