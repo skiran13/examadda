@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { userActions } from '../_actions'
+import { alertActions } from '../_actions'
 import config from 'config';
 
  
@@ -30,8 +30,11 @@ const requestOptions = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.state)
     }
+    
     fetch(`${config.apiUrl}/admin/api/viewquestions`, requestOptions).then(response => response.json())
     .then(body => this.setState({body: body}));
+    const { dispatch } = this.props;
+    dispatch(alertActions.success('Question Added Successfully'));
   }
 
   render () {
@@ -40,6 +43,7 @@ const requestOptions = {
     const { user, users} = this.props
     const { examcode,body} = this.state
     return (
+      (user.isAdmin)?(
       <div className='jumbotron'>
         <div class="card">
   <div class="card-header">
@@ -52,7 +56,7 @@ const requestOptions = {
     <input className='form-control'
                 name='examcode'
                 type='text'
-                placeholder='examcode'
+                placeholder='Examcode'
                 required='true'
                 value={examcode}
                 onChange={this.handleChange}/>
@@ -73,7 +77,7 @@ const requestOptions = {
    
   </div>
 </div>
-      </div>
+      </div>):(<h1>{window.location.assign('/')}</h1>)
     )
   }
 }

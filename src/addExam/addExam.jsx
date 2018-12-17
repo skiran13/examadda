@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { userActions } from '../_actions'
+import { alertActions } from '../_actions'
 import config from 'config';
 
 class addExam extends React.Component {
@@ -32,45 +32,30 @@ const requestOptions = {
       body: JSON.stringify(this.state)
     }
     fetch(`${config.apiUrl}/admin/addexam`, requestOptions);
+    const { dispatch } = this.props;
+    dispatch(alertActions.success('Exam Added Successfully'));
   }
 
   render () {
     const { user, users } = this.props
     const { examcode,title} = this.state
     return (
+      (user.isAdmin)?(
+      <div className='jumbotron'>
       <div className='container' id='wrap'>
-        <div className='header clearfix'>
-          <nav>
-            <ul className='nav nav-pills pull-right'>
-              <li className='active' role='presentation'>
-                <a href='http://localhost:8080/land'>
-                  <br />
-                  Home
-                  <br />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <h2 className='projecttitle'>
-          <br />
-          Online-Objective-Examination-System
-        </h2>
         <div className='page-header'>
           <h3> 
             Enter Exam Details
-            <br />
           </h3>
-          <br />
-          <a className='btn btn-primary' href='/admindashboard' role='button'>
+          <a className='btn btn-primary my-4' href='/admindashboard' role='button'>
             Back to Dashboard
           </a>
         </div>
-        <div className='messages'>
-          <span className='label label-danger text-center block-center center-block msg' />
-          <br />
-        </div>
-        <div className='content'>
+        <div class="card">
+  <div class="card-header">
+  Enter Exam Details </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
           <form onSubmit={this.handleSubmit} role='form'>
             <div className='form-group'>
               <label for='title'>Exam Code</label>
@@ -100,16 +85,15 @@ const requestOptions = {
               />
             </div>
             <br />
-            <button className='btn btn-primary float-right' type='submit'>
-              Submit{' '}
+            <button className='btn btn-success block' type='submit'>
+              Submit
             </button>
-            <br />
           </form>
-          <p>
-            <br />
-          </p>
+          </blockquote>
         </div>
       </div>
+      </div>
+      </div>):(<h1>{window.location.assign('/')}</h1>)
     )
   }
 }
