@@ -33,8 +33,7 @@ const requestOptions = {
     
     fetch(`${config.apiUrl}/admin/api/viewquestions`, requestOptions).then(response => response.json())
     .then(body => this.setState({body: body}));
-    const { dispatch } = this.props;
-    dispatch(alertActions.success('Question Added Successfully'));
+
   }
 
   render () {
@@ -49,7 +48,7 @@ const requestOptions = {
   <div class="card-header">
   View Question </div>
   <div class="card-body">
-    <blockquote class="blockquote mb-0">
+    
     <form onSubmit={this.handleSubmit} role='form'>
   <div class="form-group">
     <label for="exampleInputEmail1">Enter code</label>
@@ -65,14 +64,14 @@ const requestOptions = {
   </form>
       <div className="container mt-5">
       <ol>
-      {  Object.keys(this.state.body).map(key => ( 
-         <li><p>{this.state.body[key].title}</p>
+      {  Object.keys(this.state.body).map(key => (
+         <li className="mt-3"><p>{this.state.body[key].title}</p>
         <ul>
         {Object.keys(this.state.body[key].options).map(op => ( <li>{this.state.body[key].options[op].name}</li>))}
   </ul></li>
 ))}</ol>  
     </div>
-    </blockquote>
+    
     
    
   </div>

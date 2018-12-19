@@ -13,7 +13,7 @@ const router = express.Router();
 	
 	router.post('/api/viewquestions', questionController.getQuestions);
 
-	router.post('/api/viewquestion', questionController.getQuestion);
+	router.post('/api/getquestion', questionController.getQuestion);
 
     router.post('/addexam', examController.addExam);
 

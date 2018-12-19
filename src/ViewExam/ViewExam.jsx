@@ -30,7 +30,7 @@ class ViewExam extends React.Component {
 
 
   render () {
-    
+    console.log(this.state)
     return (
       <div className='jumbotron mt-5'>
       <h2 style={{'textAlign':'center'}}>Show Available Exams</h2>

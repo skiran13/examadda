@@ -1,5 +1,6 @@
 'use strict';
 const db = require('_helpers/db');
+const mongoose = require('mongoose');
 const Exam = db.Exam;
 const Question = db.Question;
 
@@ -47,8 +48,12 @@ var QuestionController = function(){
 		});
 	};
 
-	this.getQuestion = function(req, res){
-		Question.find({ '_id': req.body.id}, function(err, docs){
+	this.getQuestion = function(req, res){console.log(req.body)
+		
+		Question.aggregate([
+			{ $sample: {size: 20} }, 
+			{ $match:  {ofExam: Number(req.body.examcode)} 
+		}], function(err, docs){
 			res.json(docs);
 		});
 	};
