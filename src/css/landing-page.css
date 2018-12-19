@@ -50,13 +50,23 @@ header.masthead h1 {
 }
 
 @media (min-width: 768px) {
-  header.masthead {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-  }
-  header.masthead h1 {
-    font-size: 3rem;
-  }
+  color: white;
+}
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+header.masthead {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+header.masthead h1 {
+  font-size: 3rem;
 }
 
 .showcase .showcase-text {
