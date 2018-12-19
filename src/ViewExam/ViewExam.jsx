@@ -30,7 +30,7 @@ class ViewExam extends React.Component {
 
 
   render () {
-    
+    const {show} = this.state
     return (
       <div className='jumbotron mt-5'>
       <h2 style={{'textAlign':'center'}}>Show Available Exams</h2>
@@ -42,7 +42,7 @@ class ViewExam extends React.Component {
           className='table table-bordered table-striped'
           style={{ 'border-radius': '5px' }}
         >
-          {(this.state.show)?(<thead>
+          {(show)?(<thead>
             <tr>
               <th scope='col'>Name of exam</th>
               <th scope='col'>Code</th>

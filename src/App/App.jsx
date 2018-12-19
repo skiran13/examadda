@@ -26,42 +26,73 @@ import { addQuestion } from '../addQuestion'
 import { addExam } from '../addExam'
 import { deleteExam } from '../deleteExam'
 import {ViewExam} from '../ViewExam'
+import { MDBInput } from 'mdbreact';
+import config from 'config';
+
 
 class App extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { list: ['SBI PO', 'Federal Bank PO', 'Indian Bank PO'] }
+
+    this.state = {body:'',
+    data:'',
+    search: '',
+    filteredData: [], 
+    body: '',
+  }
+
+
     const { dispatch } = this.props
     history.listen((location, action) => {
       // clear alert on location change
       dispatch(alertActions.clear())
     })
-    this.handleChange = this.handleChange.bind(this)
+    //this.handleChange = this.handleChange.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
+    this.handleLink = this.handleLink.bind(this)
+    this.search = this.search.bind(this)
   }
-  handleChange (e) {
-    console.log(e.target.value)
-    $(document).ready(function () {
-      $('#myInput').on('keyup', function () {
-        var value = $(this)
-          .val()
-          .toLowerCase()
-        $(this.state.list).filter(function () {
-          $(this).toggle(
-            $(this)
-              .text()
-              .toLowerCase()
-              .indexOf(value) > -1
-          )
-        })
-      })
-    })
+  componentDidMount () {
+    this.props.dispatch(userActions.getAll())
+
+    fetch(`${config.apiUrl}/admin/searchexam`)
+    .then(response => response.json())
+    .then(body => this.setState({body:body}));
+   
+  }
+  handleLink(e){
+    var link;
+    Object.keys(this.state.body).map(k =>{
+      
+      if(this.state.body[k].name == e)
+      link =  ('/'+this.state.body[k].link)
+      }
+      )
+    return link;}
+  handleSearch (e){
+    this.setState({data: Object.keys(this.state.body).map(key => (this.state.body[key].name)) , show:true})
+    this.setState({ search: e.target.value }, () => this.search())};
+
+  search(){
+    this.setState(prevState => {
+      const filteredData = this.state.search.length
+      ? prevState.data.filter(item =>
+          item.toLowerCase().match(this.state.search.toLowerCase()) ? true : false
+        )
+      : [];
+
+      return { filteredData };
+    });
   }
 
   render () {
-    let isLoggedIn = this.props.stores.authentication.loggedIn
+   
+    console.log(this.state)
+      let isLoggedIn = this.props.stores.authentication.loggedIn
     let user = this.props.stores.authentication.user
     const { alert } = this.props
     console.log(this.props.stores.authentication, 'jiojaioj')
+
     return (
       <div>
         <div>
@@ -83,23 +114,34 @@ class App extends React.Component {
             </button>
             <ul className='navbar-nav mr-ml-auto'>
               <form className='form-inline my-2 my-lg-0'>
-                <input
-                  className='form-control mr-sm-2'
-                  type='search'
-                  placeholder='Search'
-                  aria-label='Search'
-                  onChange={this.handleChange}
-                  style={{ width: '35vw' }}
-                />
+              <div>
+              <div class="dropdown">
+        <MDBInput
+          hint="Search"
+          type="text"
+          className="dropdown-toggle"
+          data-toggle="dropdown-menu"
+          aria-label="Search"
+          value={this.state.search}
+          onChange={this.handleSearch}
+      
+        />
+
+  <div class="dropdown-menu" aria-labelledby="search">
+    {this.state.filteredData.map(item => <a className="dropdown-item" href={this.handleLink(item)}>{item}</a>)}
+  </div>
+</div>
+                         
+      </div>
                 <button
-                  className='btn btn-outline-light my-2 my-sm-0'
+                  className='btn btn-outline-light my-2 my-sm-0 ml-2'
                   type='submit'
                   id='myInput'
                 >
                   Search
                 </button>
               </form>
-            </ul>
+              </ul>
             <div
               className='collapse navbar-collapse ml-10'
               id='navbarSupportedContent'
@@ -271,6 +313,7 @@ class App extends React.Component {
         </div>
         <div className='jumbotron' style={{ 'background-color': '#dcdee0' }}>
           <div className='container'>
+
             <div>
               {alert.message && (
                 <div className={`alert ${alert.type}`}>{alert.message}</div>
@@ -298,6 +341,7 @@ class App extends React.Component {
                   <Route path='/addExam' component={addExam} />
                   <Route path='/deleteExam' component={deleteExam} />{' '}
                   <Route path='/viewexam' component={ViewExam} />
+
 
                 </div>
               </BrowserRouter>

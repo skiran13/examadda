@@ -9,7 +9,8 @@ class addExam extends React.Component {
     super(props);
     this.state={
         examcode:'',
-        title:''  
+        title:'' ,
+        link:'' 
         
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,7 +39,7 @@ const requestOptions = {
 
   render () {
     const { user, users } = this.props
-    const { examcode,title} = this.state
+    const { examcode,title,link} = this.state
     return (
       (user.isAdmin)?(
       <div className='jumbotron'>
@@ -81,6 +82,20 @@ const requestOptions = {
                 placeholder='exam tile'
                 required='true'
                 value={title}
+                onChange={this.handleChange}
+              />
+               <label for='link'>
+                <br />
+                Link:
+              </label>
+
+              <input
+                className='form-control'
+                name='link'
+                type='text'
+                placeholder='Link'
+                required='true'
+                value={link}
                 onChange={this.handleChange}
               />
             </div>

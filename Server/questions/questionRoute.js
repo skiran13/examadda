@@ -19,7 +19,9 @@ const router = express.Router();
 
     router.get('/api/viewexam', examController.getExams);
 
-    router.post('/deleteexam',  examController.deleteExam);
+	router.post('/deleteexam',  examController.deleteExam);
+	
+	router.get('/searchexam',examController.showExam)
 
 	module.exports = router;
 
