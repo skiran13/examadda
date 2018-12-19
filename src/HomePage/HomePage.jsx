@@ -1,24 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-import { userActions } from '../_actions';
+import { userActions } from '../_actions'
 
 class HomePage extends React.Component {
-    componentDidMount() {
-        
-         }
+  componentDidMount () {}
 
-    render() {
-        const { user, users } = this.props;
-        
-        return (
-            <div>
-        <nav className='navbar navbar-light bg-light static-top mt-3' style={{color:'#e9ecef','border-top-left-radius':'10px','border-top-right-radius':'10px'}}>
+  render () {
+    const { user, users } = this.props
+
+    return (
+      <div>
+        <nav
+          className='navbar navbar-light bg-light static-top mt-3'
+          style={{
+            color: '#e9ecef',
+            'border-top-left-radius': '10px',
+            'border-top-right-radius': '10px'
+          }}
+        >
           <div className='container'>
             <a className='navbar-brand'>
-              <Link style={{ color: 'darkslategrey',textDecoration: 'none', fontSize:'2vw' }} to='/land'>
-              <i className="fas fa-book-reader mr-2"/>
+              <Link
+                style={{
+                  color: 'darkslategrey',
+                  textDecoration: 'none',
+                  fontSize: '2vw'
+                }}
+                to='/land'
+              >
+                <i className='fas fa-book-reader mr-2' />
                 Exam-Adda
               </Link>
             </a>
@@ -30,59 +42,64 @@ class HomePage extends React.Component {
           <div className='container'>
             <div className='row'>
               <div className='col-xl-9 mx-auto'>
-                <h1 className='mb-5'>
-                  Welcome to Exam Adda!
-                </h1>
+                <h1 className='mb-5'>Welcome to Exam Adda!</h1>
                 <h5>
                   Boost your exam preparation with Exam Adda to crack the most
                   popular competitive exams in India. Select your course and get
                   started.
                 </h5>
                 <br />
-               <h1>{user.firstName}</h1>
-                
+                <h1>{user.firstName}</h1>
               </div>
-              
             </div>
           </div>
         </header>
 
-        <section className='features-icons bg-light text-center' style={{'border-bottom-left-radius':'10px','border-bottom-right-radius':'10px'}}>
+        <section
+          className='features-icons bg-light text-center'
+          style={{
+            'border-bottom-left-radius': '10px',
+            'border-bottom-right-radius': '10px'
+          }}
+        >
           <div className='container'>
             <div className='row'>
               <div className='col-lg-4'>
-              <Link to='/exam' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
-                <div className='card'>
-                  <img
-                    className='card-img-top'
-                    src={require('../img/sbi.jpg')}
-                    alt='Card image cap'
-                  />
-                  <div classNames='card-body'>
-                   
+                <Link
+                  to='/exam'
+                  style={{ color: 'darkslategrey', 'text-decoration': 'none' }}
+                >
+                  <div className='card'>
+                    <img
+                      className='card-img-top'
+                      src={require('../img/sbi.jpg')}
+                      alt='Card image cap'
+                    />
+                    <div classNames='card-body'>
                       <h5 className='card-title'> SBI PO</h5>
                       <p className='card-text'>
                         Study Materials, Mock Tests, Live tests and much more..
                       </p>
                       <br />
-                    
+                    </div>
                   </div>
-                </div>
                 </Link>
               </div>
 
               <div className='col-lg-4'>
-              <Link to='/FEDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
-                <div className='card'>
-                  <br />
-                  <br /> <br /> <br />
-                  <img
-                    className='card-img-top'
-                    src={require('../img/fb.png')}
-                    alt='Card image cap'
-                  />
-                  <div classNames='card-body'>
-                   
+                <Link
+                  to='/FEDbank'
+                  style={{ color: 'darkslategrey', 'text-decoration': 'none' }}
+                >
+                  <div className='card'>
+                    <br />
+                    <br /> <br /> <br />
+                    <img
+                      className='card-img-top'
+                      src={require('../img/fb.png')}
+                      alt='Card image cap'
+                    />
+                    <div classNames='card-body'>
                       <h5 className='card-title'>
                         <br />
                         <br /> <br /> <br />
@@ -95,31 +112,31 @@ class HomePage extends React.Component {
                         <br />
                         <br />
                       </p>
-                    
+                    </div>
                   </div>
-                </div>
                 </Link>
               </div>
               <div className='col-lg-4'>
-              <Link to='/INDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
-                <div className='card'>
-                  <br /> <br />
-                  <img
-                    className='card-img-top'
-                    src={require('../img/ib.jpg')}
-                    alt='Card image cap'
-                  />
-                  <div classNames='card-body'>
-                    
+                <Link
+                  to='/INDbank'
+                  style={{ color: 'darkslategrey', 'text-decoration': 'none' }}
+                >
+                  <div className='card'>
+                    <br /> <br />
+                    <img
+                      className='card-img-top'
+                      src={require('../img/ib.jpg')}
+                      alt='Card image cap'
+                    />
+                    <div classNames='card-body'>
                       <br /> <br /> <br /> <br /> <br />
                       <h5 className='card-title'>Indian Bank PO</h5>
                       <p className='card-text'>
                         Study Materials, Mock Tests, Live tests and much more..
                       </p>
                       <br />
-                    
+                    </div>
                   </div>
-                </div>
                 </Link>
               </div>
             </div>
@@ -129,10 +146,10 @@ class HomePage extends React.Component {
         <section className='showcase'>
           <div className='container-fluid p-0'>
             <div className='row no-gutters'>
-              <div className='col-lg-6 order-lg-2 text-white showcase-img'/>
+              <div className='col-lg-6 order-lg-2 text-white showcase-img1' />
               <div className='col-lg-6 order-lg-1 my-auto showcase-text'>
                 <h2>Questions Expected In Actual Exams And More!</h2>
-                <p className='lead mb-0' style={{color:'darkslategrey'}}>
+                <p className='lead mb-0' style={{ color: 'darkslategrey' }}>
                   Every question, every solution, meticulously created by our
                   team of toppers and experts, based on the latest exam
                   patterns. The mock tests are the closest exam experience you
@@ -141,10 +158,10 @@ class HomePage extends React.Component {
               </div>
             </div>
             <div className='row no-gutters'>
-              <div className='col-lg-6 text-white showcase-img' />
-              <div className='col-lg-6 my-auto showcase-text'>
+              <div className='col-lg-6 order - lg - 2 text-white showcase-img2' />
+              <div className='col-lg-6 order - lg - 1 my-auto showcase-text'>
                 <h2>Detailed & Personalised Performance Analysis</h2>
-                <p className='lead mb-0'style={{color:'darkslategrey'}}>
+                <p className='lead mb-0' style={{ color: 'darkslategrey' }}>
                   Studying and taking tests go hand-in-hand with performance
                   analysis. We give you the most in-depth analysis for every
                   test you take so that you can track your growth in each topic
@@ -156,7 +173,7 @@ class HomePage extends React.Component {
               <div className='col-lg-6 order-lg-2 text-white showcase-img' />
               <div className='col-lg-6 order-lg-1 my-auto showcase-text'>
                 <h2>The Fastest Online Learning Experience</h2>
-                <p className='lead mb-0' style={{color:'darkslategrey'}}>
+                <p className='lead mb-0' style={{ color: 'darkslategrey' }}>
                   We know about how precious your time is. Get the advantage of
                   the latest technology to kickstart your exam preparation and
                   get the finest learning experience - on Website and App. Check
@@ -167,7 +184,13 @@ class HomePage extends React.Component {
           </div>
         </section>
 
-        <section className='testimonials text-center bg-light'  style={{'border-top-left-radius':'10px','border-top-right-radius':'10px'}}>
+        <section
+          className='testimonials text-center bg-light'
+          style={{
+            'border-top-left-radius': '10px',
+            'border-top-right-radius': '10px'
+          }}
+        >
           <div className='container'>
             <h2 className='mb-5'>What users are saying...</h2>
             <div className='row'>
@@ -179,7 +202,10 @@ class HomePage extends React.Component {
                     alt=''
                   />
                   <h5>User1</h5>
-                  <p className='font-weight-light mb-0'style={{color:'darkslategrey'}}>
+                  <p
+                    className='font-weight-light mb-0'
+                    style={{ color: 'darkslategrey' }}
+                  >
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -199,7 +225,10 @@ class HomePage extends React.Component {
                     alt=''
                   />
                   <h5>User2</h5>
-                  <p className='font-weight-light mb-0' style={{color:'darkslategrey'}}>
+                  <p
+                    className='font-weight-light mb-0'
+                    style={{ color: 'darkslategrey' }}
+                  >
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -219,7 +248,10 @@ class HomePage extends React.Component {
                     alt=''
                   />
                   <h5>User3</h5>
-                  <p className='font-weight-light mb-0' style={{color:'darkslategrey'}}>
+                  <p
+                    className='font-weight-light mb-0'
+                    style={{ color: 'darkslategrey' }}
+                  >
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -246,7 +278,11 @@ class HomePage extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col'>
-                      <Link className='x' to='/login' style={{textDecoration: 'none'}}>
+                      <Link
+                        className='x'
+                        to='/login'
+                        style={{ textDecoration: 'none' }}
+                      >
                         <button
                           type='submit'
                           className='btn btn-block btn-lg btn-success'
@@ -262,19 +298,18 @@ class HomePage extends React.Component {
           </div>
         </section>
       </div>
-             
-        );
-    }
+    )
+  }
 }
 
-function mapStateToProps(state) {
-    const { users, authentication } = state;
-    const { user } = authentication;
-    return {
-        user,
-        users
-    };
+function mapStateToProps (state) {
+  const { users, authentication } = state
+  const { user } = authentication
+  return {
+    user,
+    users
+  }
 }
 
-const connectedHomePage = connect(mapStateToProps)(HomePage);
-export { connectedHomePage as HomePage };
+const connectedHomePage = connect(mapStateToProps)(HomePage)
+export { connectedHomePage as HomePage }

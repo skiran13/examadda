@@ -66,6 +66,22 @@ header.masthead h1 {
 .showcase .showcase-img {
   min-height: 30rem;
   background-size: cover;
+  padding: 110px 75px 110px 20px;
+  content: url("../img/Online-Learning17.jpg");
+}
+
+.showcase .showcase-img1 {
+  min-height: 30rem;
+  background-size: cover;
+  padding: 110px 75px 110px 20px;
+  content: url("../img/x.jpg");
+}
+
+.showcase .showcase-img2 {
+  min-height: 10rem;
+  background-size: cover;
+  padding: 130px 0px 130px 75px;
+  content: url("../img/jiafhgvm_Do’s-and-Don’ts-of-Performance-Analysis.png");
 }
 
 @media (min-width: 768px) {
