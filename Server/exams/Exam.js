@@ -5,7 +5,7 @@ var Question = require('../questions/Question');
 var examSchema = Schema({
 	name: String,
 	code: Number,
-	registeredStudent: [String]
+	link: String
 });
 
 module.exports = mongoose.model('Exam', examSchema);

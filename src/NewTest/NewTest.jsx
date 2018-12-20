@@ -10,9 +10,10 @@ class NewTest extends React.Component {
   constructor(props){
     super(props);
     this.state={
-        examcode:'4' ,body:'',value:[{'':''}]
+        examcode:'4' ,body:'',value:[],submit:false,mark:''
     }
     this.handleSubmit=this.handleSubmit.bind(this)
+    this.onChange= this.onChange.bind(this)
   }
 
 
@@ -29,14 +30,27 @@ class NewTest extends React.Component {
     
   } 
   onChange(e){
-    
-    this.setState(prevState => ({
-      value: [...prevState.value, e.target.name:e.target.value]
-    }))
+    const temp ={ "name" :e.target.name ,"value": e.target.value}
+    this.setState({ value: [...this.state.value, temp] })
+   
   }
   handleSubmit(e){
     e.preventDefault();
-    console.log(e.target.value)
+    const options = [];
+    let mark = 0;
+    console.log(this.state.value)
+    Object.keys(this.state.body).map(key => (
+      Object.keys(this.state.body[key].options).map(op =>(
+        (this.state.body[key].options[op].correct == true)?
+        options.push(op):null))))
+        Object.keys(options).map(key => (
+          Object.keys(this.state.value).map(k => (
+            (this.state.value[k].name == key && this.state.value[k].value == options[key])?mark++:null
+          ))
+        ))
+        this.setState({submit:true,mark:mark})
+
+        console.log("Mark",mark)
   }
   
 
@@ -44,11 +58,12 @@ class NewTest extends React.Component {
     
     const { user, users } = this.props
     const { examcode,body} = this.state
-    console.log(this.state.value)
+    console.log(this.state.body)
+   
    
     return (
       <div className='jumbotron' style={{ 'background-color': '#dcdee0' }}>
-      <form onSubmit={this.handleSubmit}>
+      {(!this.state.submit)?(<form onSubmit={this.handleSubmit}>
         {Object.keys(this.state.body).map(key => (
 
         <div class="card my-3">
@@ -63,7 +78,7 @@ class NewTest extends React.Component {
          <div class="row">
        <div class="col">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name={key} id={"exampleRadios"+key} value={"option"+op} onChange={this.onChange} />
+            <input class="form-check-input" type="radio" name={key} id={"exampleRadios"+key} value={op} onChange={this.onChange} />
             <label class="form-check-label" for={"exampleRadios"+key}>
             {this.state.body[key].options[op].name}
             </label>
@@ -76,7 +91,7 @@ class NewTest extends React.Component {
   </div>
         </div>))}
         <button type="submit" class="btn btn-success mt-4 block">Submit</button><br/>
-        </form>
+        </form>):(<div><p>{this.state.mark}</p></div>)}
       </div>
     )
   }

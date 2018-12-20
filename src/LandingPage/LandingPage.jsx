@@ -5,31 +5,38 @@ import { connect } from 'react-redux'
 import { userActions } from '../_actions'
 
 class LandingPage extends React.Component {
-  
-
   componentDidMount () {
     this.props.dispatch(userActions.getAll())
-
-    
   }
-  
 
   render () {
     const { user, users } = this.props
     return (
       <div>
-        <nav className='navbar navbar-light bg-light static-top mt-3' style={{color:'#e9ecef','border-top-left-radius':'10px','border-top-right-radius':'10px'}}>
+        <nav
+          className='navbar navbar-light bg-light static-top mt-3'
+          style={{
+            color: '#e9ecef',
+            'border-top-left-radius': '10px',
+            'border-top-right-radius': '10px'
+          }}
+        >
           <div className='container'>
             <a className='navbar-brand'>
-              <Link style={{ color: 'darkslategrey',textDecoration: 'none', fontSize:'2vw' }} to='/land'>
-              <i className="fas fa-book-reader mr-2"/>
+              <Link
+                style={{
+                  color: 'darkslategrey',
+                  textDecoration: 'none',
+                  fontSize: '2vw'
+                }}
+                to='/land'
+              >
+                <i className='fas fa-book-reader mr-2' />
                 Exam-Adda
               </Link>
             </a>
           </div>
         </nav>
-
-        	
 
         <header className='masthead text-white text-center'>
           <div className='overlay' />
@@ -51,7 +58,11 @@ class LandingPage extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col-12'>
-                      <Link className='x' to='/register' style={{textDecoration: 'none'}}>
+                      <Link
+                        className='x'
+                        to='/register'
+                        style={{ textDecoration: 'none' }}
+                      >
                         <button
                           type='submit'
                           className='btn btn-block btn-lg btn-success'
@@ -67,40 +78,52 @@ class LandingPage extends React.Component {
           </div>
         </header>
 
-        <section className='features-icons bg-light text-center' style={{'border-bottom-left-radius':'10px','border-bottom-right-radius':'10px'}}>
+        <section
+          className='features-icons bg-light text-center'
+          style={{
+            'border-bottom-left-radius': '10px',
+            'border-bottom-right-radius': '10px'
+          }}
+        >
           <div className='container'>
             <div className='row'>
               <div className='col-lg-4'>
-              <Link to='/exam' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>
-                <div className='card'>
-                  <img
-                    className='card-img-top'
-                    src={require('../img/sbi.jpg')}
-                    alt='Card image cap'
-                  />
-                  <div classNames='card-body'>     
+                <Link
+                  to='/exam'
+                  style={{ color: 'darkslategrey', 'text-decoration': 'none' }}
+                >
+                  <div className='card'>
+                    <img
+                      className='card-img-top'
+                      src={require('../img/sbi.jpg')}
+                      alt='Card image cap'
+                    />
+                    <div classNames='card-body'>
                       <h5 className='card-title'> SBI PO</h5>
                       <p className='card-text'>
                         Study Materials, Mock Tests, Live tests and much more..
                       </p>
                       <br />
+                    </div>
                   </div>
-                </div>
                 </Link>
               </div>
 
               <div className='col-lg-4'>
-              <Link to='/FEDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>                
-                <div className='card'>
-                  <br />
-                  <br /> <br /> <br />
-                  <img
-                    className='card-img-top'
-                    src={require('../img/fb.png')}
-                    alt='Card image cap'
-                  />
-                  <div classNames='card-body'>
-                       <h5 className='card-title'>
+                <Link
+                  to='/FEDbank'
+                  style={{ color: 'darkslategrey', 'text-decoration': 'none' }}
+                >
+                  <div className='card'>
+                    <br />
+                    <br /> <br /> <br />
+                    <img
+                      className='card-img-top'
+                      src={require('../img/fb.png')}
+                      alt='Card image cap'
+                    />
+                    <div classNames='card-body'>
+                      <h5 className='card-title'>
                         <br />
                         <br /> <br /> <br />
                         <br />
@@ -111,43 +134,44 @@ class LandingPage extends React.Component {
                         Study Materials, Mock Tests, Live tests and much more..
                         <br />
                         <br />
-                      </p>                    
+                      </p>
+                    </div>
                   </div>
-                </div>
                 </Link>
               </div>
               <div className='col-lg-4'>
-              <Link to='/INDbank' style={{ color: 'darkslategrey', 'text-decoration':'none'}}>                   
-                <div className='card'>
-                  <br /> <br />
-                  <img
-                    className='card-img-top'
-                    src={require('../img/ib.jpg')}
-                    alt='Card image cap'
-                  />
-                  <div classNames='card-body'>
-                       <br /> <br /> <br /> <br /> <br />
+                <Link
+                  to='/INDbank'
+                  style={{ color: 'darkslategrey', 'text-decoration': 'none' }}
+                >
+                  <div className='card'>
+                    <br /> <br />
+                    <img
+                      className='card-img-top'
+                      src={require('../img/ib.jpg')}
+                      alt='Card image cap'
+                    />
+                    <div classNames='card-body'>
+                      <br /> <br /> <br /> <br /> <br />
                       <h5 className='card-title'>Indian Bank PO</h5>
                       <p className='card-text'>
                         Study Materials, Mock Tests, Live tests and much more..
                       </p>
                       <br />
-                    
+                    </div>
                   </div>
-                </div>
                 </Link>
-              </div>              
+              </div>
             </div>
           </div>
         </section>
-
         <section className='showcase'>
           <div className='container-fluid p-0'>
             <div className='row no-gutters'>
-              <div className='col-lg-6 order-lg-2 text-white showcase-img'/>
+              <div className='col-lg-6 order-lg-2 text-white showcase-img1' />
               <div className='col-lg-6 order-lg-1 my-auto showcase-text'>
                 <h2>Questions Expected In Actual Exams And More!</h2>
-                <p className='lead mb-0' style={{color:'darkslategrey'}}>
+                <p className='lead mb-0' style={{ color: 'darkslategrey' }}>
                   Every question, every solution, meticulously created by our
                   team of toppers and experts, based on the latest exam
                   patterns. The mock tests are the closest exam experience you
@@ -156,10 +180,10 @@ class LandingPage extends React.Component {
               </div>
             </div>
             <div className='row no-gutters'>
-              <div className='col-lg-6 text-white showcase-img' />
-              <div className='col-lg-6 my-auto showcase-text'>
+              <div className='col-lg-6 order - lg - 2 text-white showcase-img2' />
+              <div className='col-lg-6 order - lg - 1 my-auto showcase-text'>
                 <h2>Detailed & Personalised Performance Analysis</h2>
-                <p className='lead mb-0'style={{color:'darkslategrey'}}>
+                <p className='lead mb-0' style={{ color: 'darkslategrey' }}>
                   Studying and taking tests go hand-in-hand with performance
                   analysis. We give you the most in-depth analysis for every
                   test you take so that you can track your growth in each topic
@@ -171,7 +195,7 @@ class LandingPage extends React.Component {
               <div className='col-lg-6 order-lg-2 text-white showcase-img' />
               <div className='col-lg-6 order-lg-1 my-auto showcase-text'>
                 <h2>The Fastest Online Learning Experience</h2>
-                <p className='lead mb-0' style={{color:'darkslategrey'}}>
+                <p className='lead mb-0' style={{ color: 'darkslategrey' }}>
                   We know about how precious your time is. Get the advantage of
                   the latest technology to kickstart your exam preparation and
                   get the finest learning experience - on Website and App. Check
@@ -182,7 +206,13 @@ class LandingPage extends React.Component {
           </div>
         </section>
 
-        <section className='testimonials text-center bg-light'  style={{'border-top-left-radius':'10px','border-top-right-radius':'10px'}}>
+        <section
+          className='testimonials text-center bg-light'
+          style={{
+            'border-top-left-radius': '10px',
+            'border-top-right-radius': '10px'
+          }}
+        >
           <div className='container'>
             <h2 className='mb-5'>What users are saying...</h2>
             <div className='row'>
@@ -194,7 +224,10 @@ class LandingPage extends React.Component {
                     alt=''
                   />
                   <h5>User1</h5>
-                  <p className='font-weight-light mb-0'style={{color:'darkslategrey'}}>
+                  <p
+                    className='font-weight-light mb-0'
+                    style={{ color: 'darkslategrey' }}
+                  >
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -214,7 +247,10 @@ class LandingPage extends React.Component {
                     alt=''
                   />
                   <h5>User2</h5>
-                  <p className='font-weight-light mb-0' style={{color:'darkslategrey'}}>
+                  <p
+                    className='font-weight-light mb-0'
+                    style={{ color: 'darkslategrey' }}
+                  >
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -234,7 +270,10 @@ class LandingPage extends React.Component {
                     alt=''
                   />
                   <h5>User3</h5>
-                  <p className='font-weight-light mb-0' style={{color:'darkslategrey'}}>
+                  <p
+                    className='font-weight-light mb-0'
+                    style={{ color: 'darkslategrey' }}
+                  >
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -261,7 +300,11 @@ class LandingPage extends React.Component {
                 <form>
                   <div className='form-row'>
                     <div className='col'>
-                      <Link className='x' to='/login' style={{textDecoration: 'none'}}>
+                      <Link
+                        className='x'
+                        to='/login'
+                        style={{ textDecoration: 'none' }}
+                      >
                         <button
                           type='submit'
                           className='btn btn-block btn-lg btn-success'
@@ -276,8 +319,6 @@ class LandingPage extends React.Component {
             </div>
           </div>
         </section>
-
-      
       </div>
     )
   }
