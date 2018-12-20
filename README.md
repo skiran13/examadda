@@ -1,13 +1,31 @@
-# 							DOCUMENTATION
+# 	DOCUMENTATION
+
+## Getting Started
+
+### 1) Install the dependencies:
+ 
+	npm install
+
+### 2) Run the app:
+
+	npm start
+
+### 3) Connect to the server:
+
+### Navigate to the server folder
+
+	node server
+
 ## 1)	Website landing page
 
-    Displays search bar, navigation bar including signup/login option. (Search bar is to be added)
+    Displays search bar, navigation bar including signup/login option with search bar
 
 ## 2)Searching an Exam
     User searches a particular exam and related resources on the platform.
 
 ## 3)	Displaying search results
     Search functionality returns the required exam as a result if found.
+    
 ## 4)	Visiting exam page 
     Selecting the exam leads the user to the exam details page.
 
