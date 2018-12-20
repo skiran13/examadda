@@ -239,7 +239,7 @@ class ExamPage extends React.Component {
               <tr>
                 <th scope='col'>Section</th>
                 <th scope='col'>No. of Qs</th>
-                <th scope='col'>MArks</th>
+                <th scope='col'>Marks</th>
                 <th scope='col'>Time</th>
               </tr>
             </thead>

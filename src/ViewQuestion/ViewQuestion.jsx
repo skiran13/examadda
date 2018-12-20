@@ -44,7 +44,7 @@ class ViewQuestion extends React.Component {
     const { examcode, body } = this.state
     return (
       (user.isAdmin) ? (
-        <div className='jumbotron'>
+        <div className='jumbotron'>                       
           <div class="card">
             <div class="card-header">
               View Question </div>

@@ -21,14 +21,14 @@ class deleteExam extends React.Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) {                                                       /*function to obtain the input ie.examcode from the user to delete the required exam*/ 
     e.preventDefault();
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.state)
     }
-    fetch(`${config.apiUrl}/admin/deleteexam`, requestOptions);
+    fetch(`${config.apiUrl}/admin/deleteexam`, requestOptions);           /*fetch the POST request. Refer questionRoute in questions folder*/
   }
 
 

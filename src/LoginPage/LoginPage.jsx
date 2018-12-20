@@ -21,12 +21,12 @@ class LoginPage extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
+    handleChange(e) {                                               /*function to obtain the username and password as input from the user*/ 
         const { name, value } = e.target;
         this.setState({ [name]: value });
     }
 
-    handleSubmit(e) {
+    handleSubmit(e) {                                               /*function to send the crendentials to the backend and also validate the same*/                    
         e.preventDefault();
 
         this.setState({ submitted: true });

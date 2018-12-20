@@ -22,7 +22,7 @@ class RegisterPage extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
+    handleChange(event) {                                                       /*function to obtain the username and password as input from the user*/
         const { name, value } = event.target;
         const { user } = this.state;
         this.setState({
@@ -33,7 +33,7 @@ class RegisterPage extends React.Component {
         });
     }
 
-    handleSubmit(event) {
+    handleSubmit(event) {                                                       /*function to send the crendentials to the backend and also validate the same*/
         event.preventDefault();
 
         this.setState({ submitted: true });

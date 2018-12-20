@@ -12,7 +12,7 @@ class ProfilePage extends React.Component {
     componentDidMount() {
         this.props.dispatch(userActions.getAll())
 
-        $(document).ready(function () {
+        $(document).ready(function () {                                  /*function to dynamically upload the user profile picture and also change it*/
 
 
             var readURL = function (input) {

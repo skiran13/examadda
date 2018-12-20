@@ -52,16 +52,16 @@ class App extends React.Component {
     this.handleSearch = this.handleSearch.bind(this)
     this.handleLink = this.handleLink.bind(this)
     this.search = this.search.bind(this)
-  }
+  } 
   componentDidMount() {
     this.props.dispatch(userActions.getAll())
 
-    fetch(`${config.apiUrl}/admin/searchexam`)
+    fetch(`${config.apiUrl}/admin/searchexam`)                                    /*fetch the GET request. Refer questionRoute in questions folder*/
       .then(response => response.json())
       .then(body => this.setState({ body: body }));
 
   }
-  handleLink(e) {
+  handleLink(e) {                                                                 /*function to dynamically get the link of the test page to be redirected from the search bar*/
     var link;
     Object.keys(this.state.body).map(k => {
 
@@ -71,7 +71,7 @@ class App extends React.Component {
     )
     return link;
   }
-  handleSearch(e) {
+  handleSearch(e) {                                                               /*function thats performs the search functionality on the data from the database dynamically*/
     this.setState({ data: Object.keys(this.state.body).map(key => (this.state.body[key].name)), show: true })
     this.setState({ search: e.target.value }, () => this.search())
   };
@@ -84,7 +84,7 @@ class App extends React.Component {
         )
         : [];
 
-      return { filteredData };
+      return { filteredData };                                                   /*filtered data is the end result to be displayed after the search*/
     });
   }
 
@@ -224,7 +224,7 @@ class App extends React.Component {
                   </a>
                 </li>
 
-                {!isLoggedIn ? (
+                {!isLoggedIn ? (                                                   /*conditional rendering to render the navbar with additional functionality such as add and view questions and exams*/
                   <div className='nav-item' style={{ display: '-webkit-box' }}>
                     <li className='nav-item'>
                       <a className='nav-link active' href='/login'>
@@ -291,7 +291,7 @@ class App extends React.Component {
               {alert.message && (
                 <div className={`alert ${alert.type}`}>{alert.message}</div>
               )}
-              <BrowserRouter history={history}>
+              <BrowserRouter history={history}>                                         
                 <div>
                   <PrivateRoute exact path='/' component={HomePage} />
                   <Route path='/login' component={LoginPage} />

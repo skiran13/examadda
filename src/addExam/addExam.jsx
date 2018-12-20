@@ -20,12 +20,12 @@ class addExam extends React.Component {
     this.props.dispatch(userActions.getAll())
   }
 
-  handleChange(e) {
+  handleChange(e) {                                             /*function to parse the input data*/
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) {                                             /*function to post the data using a POST request */
     e.preventDefault();
     const requestOptions = {
       method: 'POST',
@@ -41,7 +41,7 @@ class addExam extends React.Component {
     const { user, users } = this.props
     const { examcode, title, link } = this.state
     return (
-      (user.isAdmin) ? (
+      (user.isAdmin) ? (                                          /*conditional rendering to render pages with additional functionality such as add and view questions and exams*/
         <div className='jumbotron'>
           <div className='container' id='wrap'>
             <div className='page-header'>
@@ -108,7 +108,7 @@ class addExam extends React.Component {
               </div>
             </div>
           </div>
-        </div>) : (<h1>{window.location.assign('/')}</h1>)
+        </div>) : (<h1>{window.location.assign('/')}</h1>)        
     )
   }
 }

@@ -25,12 +25,12 @@ class addQuestion extends React.Component {
   commentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
-  handleChange(e) {
+  handleChange(e) {                                                                         /*function to parse the input data*/
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) {                                                                         /*function to post the data using a POST request */
     e.preventDefault();
     const requestOptions = {
       method: 'POST',
@@ -47,7 +47,7 @@ class addQuestion extends React.Component {
     const { user, users } = this.props
     const { examcode, title, image, option1, option2, option3, option4, correct } = this.state
     return (
-      (user.isAdmin) ? (
+      (user.isAdmin) ? (                                                                   /*conditional rendering to render pages with additional functionality such as add and view questions and exams*/
         <div className='jumbotron'>
           <div className='container' id='wrap'>
             <div style={{ display: 'grid', 'grid-auto-flow': 'column' }}>
