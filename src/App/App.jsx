@@ -297,9 +297,9 @@ class App extends React.Component {
                   <Route path='/login' component={LoginPage} />
                   <Route path='/register' component={RegisterPage} />
                   <Route path='/land' component={LandingPage} />
-                  <Route path='/exam' component={ExamPage} />
-                  <Route path='/FEDbank' component={FEDbank} />
-                  <Route path='/INDbank' component={INDbank} />
+                  <Route path='/exam' render={(props) => <ExamPage {...props} isLoggedIn={isLoggedIn} />} />
+                  <Route path='/FEDbank' render={(props) => <FEDbank {...props} isLoggedIn={isLoggedIn} />} />
+                  <Route path='/INDbank' render={(props) => <INDbank {...props} isLoggedIn={isLoggedIn} />} />
                   <Route path='/genINST' component={genINST} />
                   <Route path='/profile' component={ProfilePage} />
                   <Route path='/test' component={Tests} />
