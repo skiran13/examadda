@@ -5,29 +5,29 @@ import { alertActions } from '../_actions'
 import config from 'config';
 
 class addExam extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-        examcode:'',
-        title:'' ,
-        link:'' 
-        
+    this.state = {
+      examcode: '',
+      title: '',
+      link: ''
+
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  commentDidMount () {
+  commentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
 
-  handleChange(e) {
+  handleChange(e) {                                             /*function to parse the input data*/
     const { name, value } = e.target;
     this.setState({ [name]: value });
-}
+  }
 
-  handleSubmit(e){
+  handleSubmit(e) {                                             /*function to post the data using a POST request */
     e.preventDefault();
-const requestOptions = {
+    const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.state)
@@ -37,83 +37,83 @@ const requestOptions = {
     dispatch(alertActions.success('Exam Added Successfully'));
   }
 
-  render () {
+  render() {
     const { user, users } = this.props
-    const { examcode,title,link} = this.state
+    const { examcode, title, link } = this.state
     return (
-      (user.isAdmin)?(
-      <div className='jumbotron'>
-      <div className='container' id='wrap'>
-        <div className='page-header'>
-          <h3> 
-            Enter Exam Details
+      (user.isAdmin) ? (                                          /*conditional rendering to render pages with additional functionality such as add and view questions and exams*/
+        <div className='jumbotron'>
+          <div className='container' id='wrap'>
+            <div className='page-header'>
+              <h3>
+                Enter Exam Details
           </h3>
-          <a className='btn btn-primary my-4' href='/admindashboard' role='button'>
-            Back to Dashboard
+              <a className='btn btn-primary my-4' href='/admindashboard' role='button'>
+                Back to Dashboard
           </a>
-        </div>
-        <div class="card">
-  <div class="card-header">
-  Enter Exam Details </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-          <form onSubmit={this.handleSubmit} role='form'>
-            <div className='form-group'>
-              <label for='title'>Exam Code</label>
-              <br />
-              <input
-                className='form-control'
-                name='examcode'
-                type='text'
-                placeholder='examcode'
-                required='true'
-                value={examcode}
-                onChange={this.handleChange}
-              />
-              <label for='title'>
-                <br />
-                Title:
-              </label>
-
-              <input
-                className='form-control'
-                name='title'
-                type='text'
-                placeholder='exam tile'
-                required='true'
-                value={title}
-                onChange={this.handleChange}
-              />
-               <label for='link'>
-                <br />
-                Link:
-              </label>
-
-              <input
-                className='form-control'
-                name='link'
-                type='text'
-                placeholder='Link'
-                required='true'
-                value={link}
-                onChange={this.handleChange}
-              />
             </div>
-            <br />
-            <button className='btn btn-success block' type='submit'>
-              Submit
+            <div class="card">
+              <div class="card-header">
+                Enter Exam Details </div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <form onSubmit={this.handleSubmit} role='form'>
+                    <div className='form-group'>
+                      <label for='title'>Exam Code</label>
+                      <br />
+                      <input
+                        className='form-control'
+                        name='examcode'
+                        type='text'
+                        placeholder='examcode'
+                        required='true'
+                        value={examcode}
+                        onChange={this.handleChange}
+                      />
+                      <label for='title'>
+                        <br />
+                        Title:
+              </label>
+
+                      <input
+                        className='form-control'
+                        name='title'
+                        type='text'
+                        placeholder='exam tile'
+                        required='true'
+                        value={title}
+                        onChange={this.handleChange}
+                      />
+                      <label for='link'>
+                        <br />
+                        Link:
+              </label>
+
+                      <input
+                        className='form-control'
+                        name='link'
+                        type='text'
+                        placeholder='Link'
+                        required='true'
+                        value={link}
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                    <br />
+                    <button className='btn btn-success block' type='submit'>
+                      Submit
             </button>
-          </form>
-          </blockquote>
-        </div>
-      </div>
-      </div>
-      </div>):(<h1>{window.location.assign('/')}</h1>)
+                  </form>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>) : (<h1>{window.location.assign('/')}</h1>)        
     )
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

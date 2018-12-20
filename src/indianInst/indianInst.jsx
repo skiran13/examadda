@@ -5,11 +5,11 @@ import { connect } from 'react-redux'
 import { userActions } from '../_actions'
 
 class indianInst extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
 
-  render () {
+  render() {
     const { user, users } = this.props
     return (
       <div>
@@ -201,7 +201,7 @@ class indianInst extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

@@ -4,75 +4,74 @@ import { connect } from 'react-redux'
 import { userActions } from '../_actions'
 import config from 'config';
 
- 
+
 class ViewExam extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      body:'',
+    this.state = {
+      body: '',
       show: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    
+
   }
-  commentDidMount () {
+  commentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
 
-    handleSubmit(e){
-        e.preventDefault();
-        console.log('hello')
-        fetch(`${config.apiUrl}/admin/api/viewexam`)
-        .then(response => response.json())
-        .then(body => this.setState({body: body , show:true}));
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('hello')
+    fetch(`${config.apiUrl}/admin/api/viewexam`)
+      .then(response => response.json())
+      .then(body => this.setState({ body: body, show: true }));
 
-    }
+  }
 
 
-  render () {
-    console.log(this.state)
-    const {show} = this.state
+  render() {
+    const { show } = this.state
     return (
       <div className='jumbotron mt-5'>
-      <h2 style={{'textAlign':'center'}}>Show Available Exams</h2>
-      <form role='form' onSubmit={this.handleSubmit}>
-      <button type="submit" class="btn btn-success block mt-3" >Show exams</button>
-      </form>
-      <div className="container mt-5">
-      <table
-          className='table table-bordered table-striped'
-          style={{ 'border-radius': '5px' }}
-        >
-          {(show)?(<thead>
-            <tr>
-              <th scope='col'>Name of exam</th>
-              <th scope='col'>Code</th>
-            </tr>
-          </thead>): null}
-          <tbody>
-          {  Object.keys(this.state.body).map(key => ( 
-           
-       
+        <h2 style={{ 'textAlign': 'center' }}>Show Available Exams</h2>
+        <form role='form' onSubmit={this.handleSubmit}>
+          <button type="submit" class="btn btn-success block mt-3" >Show exams</button>
+        </form>
+        <div className="container mt-5">
+          <table
+            className='table table-bordered table-striped'
+            style={{ 'border-radius': '5px' }}
+          >
+            {(show) ? (<thead>
+              <tr>
+                <th scope='col'>Name of exam</th>
+                <th scope='col'>Code</th>
+              </tr>
+            </thead>) : null}
+            <tbody>
+              {Object.keys(this.state.body).map(key => (
 
-            <tr>
-    
-              <td><p>{this.state.body[key].name}</p></td>
-              <td>{this.state.body[key].code}</td>
-              
-            </tr>
-            ))}  
+
+
+                <tr>
+
+                  <td><p>{this.state.body[key].name}</p></td>
+                  <td>{this.state.body[key].code}</td>
+
+                </tr>
+              ))}
             </tbody>
-         </table>
-      
-      
-    </div>
+          </table>
+
+
+        </div>
 
       </div>
     )
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

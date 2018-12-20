@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import { userActions } from '../_actions'
 
 class HomePage extends React.Component {
-  componentDidMount () {}
+  componentDidMount() { }
 
-  render () {
+  render() {
     const { user, users } = this.props
 
     return (
@@ -302,7 +302,7 @@ class HomePage extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

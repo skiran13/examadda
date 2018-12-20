@@ -9,7 +9,7 @@ import { userActions } from '../_actions'
 import '../css/ExamPage.css'
 
 class FEDbank extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(userActions.getAll())
     $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
@@ -41,7 +41,7 @@ class FEDbank extends React.Component {
     })
   }
 
-  render () {
+  render() {
     const { user, users } = this.props
     return (
       <div>
@@ -413,7 +413,7 @@ class FEDbank extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

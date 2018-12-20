@@ -5,11 +5,11 @@ import { connect } from 'react-redux'
 import { userActions } from '../_actions'
 
 class fedInst1 extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
 
-  render () {
+  render() {
     const { user, users } = this.props
     return (
       <div>
@@ -200,7 +200,7 @@ class fedInst1 extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {

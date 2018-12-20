@@ -5,36 +5,36 @@ import { userActions } from '../_actions'
 import config from 'config';
 
 class deleteExam extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-        examcode:'' 
+    this.state = {
+      examcode: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  commentDidMount () {
+  commentDidMount() {
     this.props.dispatch(userActions.getAll())
   }
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-}
+  }
 
-  handleSubmit(e){
+  handleSubmit(e) {                                                       /*function to obtain the input ie.examcode from the user to delete the required exam*/ 
     e.preventDefault();
-const requestOptions = {
+    const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.state)
     }
-    fetch(`${config.apiUrl}/admin/deleteexam`, requestOptions);
+    fetch(`${config.apiUrl}/admin/deleteexam`, requestOptions);           /*fetch the POST request. Refer questionRoute in questions folder*/
   }
 
 
-  render () {
+  render() {
     const { user, users } = this.props
-    const { examcode} = this.state
+    const { examcode } = this.state
     return (
       <div className='container' id='wrap'>
         <div className='header clearfix'>
@@ -98,7 +98,7 @@ const requestOptions = {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { users, authentication } = state
   const { user } = authentication
   return {
