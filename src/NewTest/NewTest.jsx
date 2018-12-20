@@ -39,7 +39,6 @@ class NewTest extends React.Component {
     e.preventDefault()
     const options = []
     let mark = 0
-    console.log(this.state.value)
     Object.keys(this.state.body).map(key =>
       Object.keys(this.state.body[key].options).map(op =>
         this.state.body[key].options[op].correct == true
@@ -106,21 +105,81 @@ class NewTest extends React.Component {
             </button>
             <br />
           </form>
+        ) : this.state.mark != 0 ? (
+          <div
+            class='mx-auto'
+            style={{
+              width: '18rem',
+              textAlign: 'center',
+              border: 'solid',
+              borderColor: 'seagreen',
+              borderRadius: '10px',
+              background: 'seagreen'
+            }}
+          >
+            <i
+              class='fas fa-smile my-4'
+              style={{ 'font-size': '15em', color: 'white' }}
+            />
+            <div
+              class='card mx-auto'
+              style={{
+                'border-bottom-left-radius': '10px',
+                'border-bottom-right-radius': '10px'
+              }}
+            >
+              <div class='card-body'>
+                <h5 class='card-title' style={{ textAlign: 'center' }}>
+                  Your Score
+                </h5>
+                <p class='card-text' style={{ textAlign: 'center' }}>
+                  You have scored
+                </p>
+                <h1 style={{ textAlign: 'center' }}>
+                  {' '}
+                  <span class='badge badge-pill badge-success'>
+                    {this.state.mark}
+                  </span>
+                </h1>
+              </div>
+            </div>
+          </div>
         ) : (
-          <div class='container' style={{ padding: '0% 0% 0% 40%' }}>
-            <div class='row'>
-              <div class='row-lg' id='TestCard'>
-                <div className='card card-1 col-md-12 text-md-center'>
-                  <br />
-                  <i class='fas fa-check fa-7x' />
-
-                  <div className='card-body'>
-                    <h3 className='card-title'>RESULT</h3>
-                    <p className='card-text'>
-                      <h4>Your Score is : {this.state.mark}</h4>
-                    </p>
-                  </div>
-                </div>
+          <div
+            class='mx-auto'
+            style={{
+              width: '18rem',
+              textAlign: 'center',
+              border: 'solid',
+              borderColor: '#cb2b2b',
+              borderRadius: '10px',
+              background: '#cb2b2b'
+            }}
+          >
+            <i
+              class='fas fa-frown my-4'
+              style={{ 'font-size': '15em', color: 'white' }}
+            />
+            <div
+              class='card mx-auto'
+              style={{
+                'border-bottom-left-radius': '10px',
+                'border-bottom-right-radius': '10px'
+              }}
+            >
+              <div class='card-body'>
+                <h5 class='card-title' style={{ textAlign: 'center' }}>
+                  Your Score
+                </h5>
+                <p class='card-text' style={{ textAlign: 'center' }}>
+                  You have scored
+                </p>
+                <h1 style={{ textAlign: 'center' }}>
+                  {' '}
+                  <span class='badge badge-pill badge-danger'>
+                    {this.state.mark}
+                  </span>
+                </h1>
               </div>
             </div>
           </div>

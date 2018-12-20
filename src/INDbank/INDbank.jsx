@@ -103,7 +103,7 @@ class INDbank extends React.Component {
                   Guide, Admit Card, Latest Exam Pattern and Results here.
                   Kickstart your preparation with Online Test Series now!
                 </h5>
-              </div>
+                {(!this.props.isLoggedIn)?(
               <div className='col-md-10 col-lg-8 col-xl-7 mx-auto'>
                 <form>
                   <div className='form-row'>
@@ -123,6 +123,7 @@ class INDbank extends React.Component {
                     </div>
                   </div>
                 </form>
+              </div>):(<h1>{user.firstName}</h1>)}
               </div>
             </div>
           </div>

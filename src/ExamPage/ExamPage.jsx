@@ -40,6 +40,8 @@ class ExamPage extends React.Component {
   }
 
   render() {
+    console.log(this.props.isLoggedIn,'hi')
+
     const { user, users } = this.props
     return (
       <div>
@@ -102,7 +104,8 @@ class ExamPage extends React.Component {
                   dates, admit card, latest exam pattern and results here. Kick
                   start your preparation now!
                 </h5>
-              </div>
+              
+              {(!this.props.isLoggedIn)?(
               <div className='col-md-10 col-lg-8 col-xl-7 mx-auto'>
                 <form>
                   <div className='form-row'>
@@ -122,6 +125,7 @@ class ExamPage extends React.Component {
                     </div>
                   </div>
                 </form>
+              </div>):(<h1>{user.firstName}</h1>)}
               </div>
             </div>
           </div>
