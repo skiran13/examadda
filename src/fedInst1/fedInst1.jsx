@@ -5,11 +5,11 @@ import { connect } from 'react-redux'
 import { userActions } from '../_actions'
 
 class fedInst1 extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(userActions.getAll())
   }
 
-  render() {
+  render () {
     const { user, users } = this.props
     return (
       <div>
@@ -183,10 +183,13 @@ class fedInst1 extends React.Component {
           </a>
         </div>
         <div className='row-md-9 show_before_exam_start'>
-          <button type='button' className='btn btn-success btn-lg float-right'>
+          <a
+            href='http://localhost:8080/newtest'
+            className='btn btn-success btn-lg float-right'
+          >
             <span className='temp-text '>Start Test</span>
             <span className='icon'>→</span>
-          </button>
+          </a>
         </div>
         <div>
           {' '}
@@ -200,7 +203,7 @@ class fedInst1 extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   const { users, authentication } = state
   const { user } = authentication
   return {
