@@ -35,6 +35,3 @@
 ## 11) Test Starts
 -   Test begins, questions appear and the timer starts.
 -   Also shows the section wise details of candidate.
-
-## 12) Forum
-	     Exam page also has doubts and discussions section to answer FAQs.
