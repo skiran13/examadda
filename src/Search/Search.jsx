@@ -7,7 +7,7 @@ class Search extends React.Component {
   render() {
     return (
       <Container>
-        
+
         <Row>
           <Col md="6">
             <Input hint="Search" type="text" containerClass="mt-0" />

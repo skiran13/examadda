@@ -25,21 +25,22 @@ import { ViewQuestion } from '../ViewQuestion'
 import { addQuestion } from '../addQuestion'
 import { addExam } from '../addExam'
 import { deleteExam } from '../deleteExam'
-import {ViewExam} from '../ViewExam'
+import { ViewExam } from '../ViewExam'
 import { MDBInput } from 'mdbreact';
 import config from 'config';
 
 
 class App extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
-    this.state = {body:'',
-    data:'',
-    search: '',
-    filteredData: [], 
-    body: '',
-  }
+    this.state = {
+      body: '',
+      data: '',
+      search: '',
+      filteredData: [],
+      body: '',
+    }
 
 
     const { dispatch } = this.props
@@ -52,43 +53,45 @@ class App extends React.Component {
     this.handleLink = this.handleLink.bind(this)
     this.search = this.search.bind(this)
   }
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(userActions.getAll())
 
     fetch(`${config.apiUrl}/admin/searchexam`)
-    .then(response => response.json())
-    .then(body => this.setState({body:body}));
-   
-  }
-  handleLink(e){
-    var link;
-    Object.keys(this.state.body).map(k =>{
-      
-      if(this.state.body[k].name == e)
-      link =  ('/'+this.state.body[k].link)
-      }
-      )
-    return link;}
-  handleSearch (e){
-    this.setState({data: Object.keys(this.state.body).map(key => (this.state.body[key].name)) , show:true})
-    this.setState({ search: e.target.value }, () => this.search())};
+      .then(response => response.json())
+      .then(body => this.setState({ body: body }));
 
-  search(){
+  }
+  handleLink(e) {
+    var link;
+    Object.keys(this.state.body).map(k => {
+
+      if (this.state.body[k].name == e)
+        link = ('/' + this.state.body[k].link)
+    }
+    )
+    return link;
+  }
+  handleSearch(e) {
+    this.setState({ data: Object.keys(this.state.body).map(key => (this.state.body[key].name)), show: true })
+    this.setState({ search: e.target.value }, () => this.search())
+  };
+
+  search() {
     this.setState(prevState => {
       const filteredData = this.state.search.length
-      ? prevState.data.filter(item =>
+        ? prevState.data.filter(item =>
           item.toLowerCase().match(this.state.search.toLowerCase()) ? true : false
         )
-      : [];
+        : [];
 
       return { filteredData };
     });
   }
 
-  render () {
-   
+  render() {
+
     console.log(this.state)
-      let isLoggedIn = this.props.stores.authentication.loggedIn
+    let isLoggedIn = this.props.stores.authentication.loggedIn
     let user = this.props.stores.authentication.user
     const { alert } = this.props
     console.log(this.props.stores.authentication, 'jiojaioj')
@@ -114,25 +117,25 @@ class App extends React.Component {
             </button>
             <ul className='navbar-nav mr-ml-auto'>
               <form className='form-inline my-2 my-lg-0'>
-              <div>
-              <div class="dropdown">
-        <MDBInput
-          hint="Search"
-          type="text"
-          className="dropdown-toggle"
-          data-toggle="dropdown-menu"
-          aria-label="Search"
-          value={this.state.search}
-          onChange={this.handleSearch}
-      
-        />
+                <div>
+                  <div class="dropdown">
+                    <MDBInput
+                      hint="Search"
+                      type="text"
+                      className="dropdown-toggle"
+                      data-toggle="dropdown-menu"
+                      aria-label="Search"
+                      value={this.state.search}
+                      onChange={this.handleSearch}
 
-  <div class="dropdown-menu" aria-labelledby="search">
-    {this.state.filteredData.map(item => <a className="dropdown-item" href={this.handleLink(item)}>{item}</a>)}
-  </div>
-</div>
-                         
-      </div>
+                    />
+
+                    <div class="dropdown-menu" aria-labelledby="search">
+                      {this.state.filteredData.map(item => <a className="dropdown-item" href={this.handleLink(item)}>{item}</a>)}
+                    </div>
+                  </div>
+
+                </div>
                 <button
                   className='btn btn-outline-light my-2 my-sm-0 ml-2'
                   type='submit'
@@ -141,7 +144,7 @@ class App extends React.Component {
                   Search
                 </button>
               </form>
-              </ul>
+            </ul>
             <div
               className='collapse navbar-collapse ml-10'
               id='navbarSupportedContent'
@@ -237,46 +240,46 @@ class App extends React.Component {
                     </li>
                   </div>
                 ) : (
-                  <li className='nav-item'>
-                    <div className='btn-group nav-link py-0 mt-1'>
-                      <a
-                        href='/'
-                        role='button'
-                        className='btn btn-sm btn-outline-light'
-                      >
-                        {user.firstName}
-                      </a>
-
-                      <button
-                        type='button'
-                        className='btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-split'
-                        data-toggle='dropdown'
-                        aria-haspopup='true'
-                        aria-expanded='false'
-                      >
-                        <span className='sr-only'>Toggle Dropdown</span>
-                      </button>
-
-                      <div className='dropdown-menu dropdown-menu-right'>
-                        <a className='dropdown-item' href='/profile'>
-                          Profile
-                        </a>
-                        <a className='dropdown-item' href='/'>
-                          Dashboard
-                        </a>
+                    <li className='nav-item'>
+                      <div className='btn-group nav-link py-0 mt-1'>
                         <a
-                          className='dropdown-item'
-                          onClick={e => {
-                            this.props.dispatch(userActions.logout())
-                          }}
                           href='/'
+                          role='button'
+                          className='btn btn-sm btn-outline-light'
                         >
-                          Logout
+                          {user.firstName}
                         </a>
+
+                        <button
+                          type='button'
+                          className='btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-split'
+                          data-toggle='dropdown'
+                          aria-haspopup='true'
+                          aria-expanded='false'
+                        >
+                          <span className='sr-only'>Toggle Dropdown</span>
+                        </button>
+
+                        <div className='dropdown-menu dropdown-menu-right'>
+                          <a className='dropdown-item' href='/profile'>
+                            Profile
+                        </a>
+                          <a className='dropdown-item' href='/'>
+                            Dashboard
+                        </a>
+                          <a
+                            className='dropdown-item'
+                            onClick={e => {
+                              this.props.dispatch(userActions.logout())
+                            }}
+                            href='/'
+                          >
+                            Logout
+                        </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                )}
+                    </li>
+                  )}
               </ul>
             </div>
           </nav>
@@ -391,7 +394,7 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   const { alert } = state
 
   return {
