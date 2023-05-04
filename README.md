@@ -1,6 +1,18 @@
-# 	DOCUMENTATION
+# Exam Adda
 
-## Getting Started
+An all purpose exam hosting platform for different use cases
+
+![1](./screenshots/screenshots/LandingPage.png)
+
+![1](./screenshots/screenshots/Login.png)
+
+![1](./screenshots/screenshots/ViewExam.png)
+
+![1](./screenshots/screenshots/TestPage.png)
+
+![1](./screenshots/screenshots/GeneralInstruction.png)
+
+# Getting Started
 
 ### 1) Install the dependencies:
  
